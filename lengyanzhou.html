@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楞嚴咒 · 21日記憶訓練計畫</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+(function(){
+  var theme = localStorage.getItem('theme');
+  if (!theme) {
+    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<style>
+/* =============================================
+   TOKENS
+   ============================================= */
+:root {
+  --ink: #16161f;
+  --ink-light: #1f1f2b;
+  --ink-card: #1c1c28;
+  --gold: #c4a35a;
+  --gold-bright: #d4b368;
+  --gold-dim: #8a7340;
+  --gold-pale: #e8d5a3;
+  --parchment: #f7f3eb;
+  --parchment-dim: #e8e1d5;
+  --vermillion: #c2453a;
+
+  --phase-1: #5a8a7a;
+  --phase-1-bg: rgba(90,138,122,0.08);
+  --phase-1-bg-strong: rgba(90,138,122,0.14);
+  --phase-2: #c4973a;
+  --phase-2-bg: rgba(196,151,58,0.08);
+  --phase-2-bg-strong: rgba(196,151,58,0.14);
+  --phase-3: #d4783c;
+  --phase-3-bg: rgba(212,120,60,0.08);
+  --phase-3-bg-strong: rgba(212,120,60,0.14);
+  --phase-4: #c2453a;
+  --phase-4-bg: rgba(194,69,58,0.08);
+  --phase-4-bg-strong: rgba(194,69,58,0.14);
+
+  --text-dark: #2d2923;
+  --text-muted: #6b6660;
+  --text-light: #e8e3da;
+  --text-light-muted: #9a958b;
+
+  --font-mantra: 'Cormorant Garamond','Noto Serif','Times New Roman',serif;
+  --font-display: 'Cormorant Garamond','Songti SC','Noto Serif SC',serif;
+  --font-body: 'Inter','PingFang SC','Noto Sans SC',system-ui,sans-serif;
+
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1100px;
+
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-faint: rgba(255,255,255,0.03);
+  --border-subtle-strong: rgba(255,255,255,0.08);
+  --bg-overlay: rgba(255,255,255,0.02);
+  --bg-hover: rgba(255,255,255,0.015);
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.08);
+  --card-shadow-hover: 0 8px 25px rgba(0,0,0,0.18),0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* =============================================
+   LIGHT THEME
+   ============================================= */
+[data-theme="light"] {
+  --ink: #faf6ef;
+  --ink-light: #f0ebe0;
+  --ink-card: #fffef9;
+  --gold: #b3903f;
+  --gold-bright: #c4a35a;
+  --gold-dim: #8a7340;
+  --gold-pale: #8a6d2b;
+  --parchment: #fffef9;
+  --parchment-dim: #f0ebe0;
+  --text-dark: #2d2923;
+  --text-muted: #6b6660;
+  --text-light: #2d2923;
+  --text-light-muted: #5c5750;
+
+  --phase-1-bg: rgba(90,138,122,0.12);
+  --phase-1-bg-strong: rgba(90,138,122,0.20);
+  --phase-2-bg: rgba(196,151,58,0.12);
+  --phase-2-bg-strong: rgba(196,151,58,0.20);
+  --phase-3-bg: rgba(212,120,60,0.12);
+  --phase-3-bg-strong: rgba(212,120,60,0.20);
+  --phase-4-bg: rgba(194,69,58,0.12);
+  --phase-4-bg-strong: rgba(194,69,58,0.20);
+
+  --border-subtle: rgba(0,0,0,0.08);
+  --border-faint: rgba(0,0,0,0.04);
+  --border-subtle-strong: rgba(0,0,0,0.10);
+  --bg-overlay: rgba(0,0,0,0.02);
+  --bg-hover: rgba(0,0,0,0.03);
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.10),0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:var(--font-body);
+  background:var(--ink);
+  color:var(--text-dark);
+  line-height:1.6;
+  overflow-x:hidden;
+  transition:background-color 0.3s ease,color 0.2s ease;
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:clamp(3rem,10vh,6rem) 1.5rem clamp(2.5rem,6vh,4rem);
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(196,163,90,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.mantra-display{
+  font-family:var(--font-mantra);
+  font-size:clamp(1.2rem,3.5vw,2.2rem);
+  font-style:italic;color:var(--gold);
+  letter-spacing:0.02em;line-height:1.5;
+  max-width:38rem;
+  animation:mantra-breathe 6s ease-in-out infinite;
+  text-shadow:0 0 40px rgba(196,163,90,0.15);
+}
+@keyframes mantra-breathe{
+  0%,100%{opacity:0.85;text-shadow:0 0 40px rgba(196,163,90,0.10)}
+  50%{opacity:1;text-shadow:0 0 60px rgba(196,163,90,0.22)}
+}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,6vw,3.4rem);
+  font-weight:600;color:var(--text-light);
+  margin-top:1.8rem;letter-spacing:0.04em;
+}
+.hero .subtitle{
+  color:var(--text-light-muted);
+  font-size:0.95rem;margin-top:0.6rem;letter-spacing:0.06em;
+}
+
+/* hero timeline */
+.timeline-mini{
+  display:flex;align-items:center;gap:0;
+  margin-top:2.5rem;flex-wrap:wrap;justify-content:center;
+}
+.timeline-dot{
+  display:flex;align-items:center;gap:0.5rem;
+  padding:0.4rem 0.9rem;
+}
+.timeline-dot::before{
+  content:'';width:10px;height:10px;border-radius:50%;flex-shrink:0;
+}
+.timeline-dot.t1::before{background:var(--phase-1)}
+.timeline-dot.t2::before{background:var(--phase-2)}
+.timeline-dot.t3::before{background:var(--phase-3)}
+.timeline-dot.t4::before{background:var(--phase-4)}
+.timeline-dot span{
+  font-size:0.78rem;font-weight:500;
+  color:var(--text-light-muted);letter-spacing:0.04em;white-space:nowrap;
+}
+.timeline-dash{width:1.5rem;height:1px;background:var(--gold-dim);opacity:0.4}
+
+/* =============================================
+   SECTIONS (shared)
+   ============================================= */
+section{
+  padding:2rem 1.5rem 4rem;
+  max-width:var(--max-width);margin:0 auto;
+}
+.section-label{
+  font-size:0.72rem;font-weight:600;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--gold-dim);
+  text-align:center;margin-bottom:0.6rem;
+}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3.5vw,2rem);
+  font-weight:600;color:var(--text-light);
+  text-align:center;letter-spacing:0.04em;margin-bottom:0.4rem;
+}
+.section-sub{
+  text-align:center;color:var(--text-light-muted);
+  font-size:0.85rem;margin-bottom:2rem;line-height:1.5;
+}
+
+/* =============================================
+   STRUCTURE OVERVIEW TABLE
+   ============================================= */
+.structure-table-wrap{
+  overflow-x:auto;
+  border-radius:var(--radius);
+  border:1px solid var(--border-subtle);
+}
+.structure-table{
+  width:100%;border-collapse:collapse;
+  font-size:0.85rem;min-width:600px;
+}
+.structure-table thead th{
+  text-align:left;padding:0.9rem 1rem;
+  font-size:0.7rem;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--gold-dim);
+  background:var(--bg-overlay);
+  border-bottom:1px solid var(--border-subtle);
+}
+.structure-table tbody td{
+  padding:0.75rem 1rem;
+  color:var(--text-light);
+  border-bottom:1px solid var(--border-faint);
+  vertical-align:top;line-height:1.5;
+}
+.structure-table tbody tr:last-child td{border-bottom:none}
+.structure-table tbody tr:hover{background:var(--bg-hover)}
+.structure-table .sec-num{
+  font-weight:600;color:var(--gold);
+  white-space:nowrap;width:1%;
+}
+.structure-table .sec-name{font-weight:600;white-space:nowrap;color:var(--text-light)}
+.structure-table .sec-lines{color:var(--text-light-muted);white-space:nowrap;font-size:0.8rem}
+.structure-table .sec-desc{color:var(--text-light-muted);font-size:0.82rem}
+
+/* =============================================
+   PATTERN HIGHLIGHTS
+   ============================================= */
+.pattern-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:0.9rem;margin-top:1.5rem;
+}
+.pattern-card{
+  background:var(--ink-light);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--radius-sm);
+  padding:1.1rem 1.2rem;
+  display:flex;gap:0.8rem;align-items:flex-start;
+}
+.pattern-icon{
+  font-size:1.3rem;flex-shrink:0;line-height:1;
+  margin-top:0.1rem;
+}
+.pattern-card h4{
+  font-size:0.8rem;font-weight:600;color:var(--text-light);
+  margin-bottom:0.2rem;letter-spacing:0.03em;
+}
+.pattern-card p{
+  font-size:0.75rem;color:var(--text-light-muted);line-height:1.5;
+}
+
+/* =============================================
+   MANUSCRIPT TEXT CARDS
+   ============================================= */
+.manuscript-grid{
+  display:flex;flex-direction:column;gap:1rem;
+}
+.ms-card{
+  background:var(--ink-card);
+  border:1px solid rgba(196,163,90,0.10);
+  border-radius:var(--radius);
+  padding:clamp(1.2rem,2.5vw,1.8rem);
+  position:relative;overflow:hidden;
+  transition:border-color 0.3s ease;
+}
+.ms-card:hover{border-color:rgba(196,163,90,0.25)}
+.ms-card::after{
+  content:'';position:absolute;top:0;left:0;
+  width:3px;height:100%;
+  border-radius:3px 0 0 3px;
+}
+.ms-card.s1::after{background:var(--phase-1)}
+.ms-card.s2::after{background:var(--phase-2)}
+.ms-card.s3::after{background:var(--phase-3)}
+.ms-card.s4::after{background:var(--phase-2)}
+.ms-card.s5::after{background:var(--gold)}
+
+.ms-header{
+  display:flex;align-items:baseline;gap:0.6rem;
+  margin-bottom:0.8rem;flex-wrap:wrap;
+}
+.ms-num{
+  font-size:0.68rem;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--gold-dim);
+}
+.ms-title{
+  font-family:var(--font-display);
+  font-size:1rem;font-weight:600;color:var(--text-light);
+  letter-spacing:0.04em;
+}
+.ms-tag{
+  font-size:0.65rem;color:var(--text-light-muted);
+  border:1px solid var(--border-subtle-strong);
+  padding:0.15em 0.55em;border-radius:100px;
+}
+.ms-text{
+  font-family:var(--font-mantra);
+  font-size:clamp(0.85rem,1.5vw,1rem);
+  color:var(--gold-pale);
+  line-height:1.7;letter-spacing:0.015em;
+  word-break:break-word;
+}
+.ms-text.compact{font-size:0.82rem;line-height:1.6}
+
+/* =============================================
+   PHASE CARDS (2x2 grid)
+   ============================================= */
+.cards-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;position:relative;
+}
+@media(max-width:740px){.cards-grid{grid-template-columns:1fr;gap:1.2rem}}
+
+/* central mala connector */
+.cards-grid::before{
+  content:'';position:absolute;left:50%;top:2rem;bottom:2rem;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold-dim) 10%,var(--gold-dim) 90%,transparent);
+  opacity:0.2;pointer-events:none;
+}
+.cards-grid::after{
+  content:'';position:absolute;left:50%;transform:translateX(-50%);
+  top:2.5rem;bottom:2.5rem;width:6px;
+  background:
+    radial-gradient(circle at center,var(--phase-1) 2px,transparent 2px) 0 10%,
+    radial-gradient(circle at center,var(--phase-2) 2px,transparent 2px) 0 38%,
+    radial-gradient(circle at center,var(--phase-3) 2px,transparent 2px) 0 62%,
+    radial-gradient(circle at center,var(--phase-4) 2px,transparent 2px) 0 88%;
+  background-repeat:no-repeat;background-size:100% 25%;
+  opacity:0.45;pointer-events:none;
+}
+@media(max-width:740px){.cards-grid::before,.cards-grid::after{display:none}}
+
+/* card base */
+.card{
+  background:var(--parchment);
+  border-radius:var(--radius);
+  padding:clamp(1.5rem,3vw,2.2rem);
+  position:relative;
+  transition:transform 0.25s ease,box-shadow 0.25s ease;
+  box-shadow:var(--card-shadow);
+  display:flex;flex-direction:column;gap:1rem;
+}
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--card-shadow-hover);
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.card.p1::before{background:var(--phase-1)}
+.card.p2::before{background:var(--phase-2)}
+.card.p3::before{background:var(--phase-3)}
+.card.p4::before{background:var(--phase-4)}
+
+.card-header{
+  display:flex;align-items:center;justify-content:space-between;gap:0.8rem;
+}
+.card-phase-label{
+  font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+}
+.card.p1 .card-phase-label{color:var(--phase-1)}
+.card.p2 .card-phase-label{color:var(--phase-2)}
+.card.p3 .card-phase-label{color:var(--phase-3)}
+.card.p4 .card-phase-label{color:var(--phase-4)}
+
+.card h2{
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,2vw,1.35rem);
+  font-weight:600;color:var(--text-dark);
+  line-height:1.3;letter-spacing:0.03em;
+}
+.day-badge{
+  display:inline-block;font-size:0.7rem;font-weight:600;
+  padding:0.2em 0.7em;border-radius:100px;
+  white-space:nowrap;letter-spacing:0.04em;
+}
+.card.p1 .day-badge{background:var(--phase-1-bg);color:var(--phase-1)}
+.card.p2 .day-badge{background:var(--phase-2-bg);color:var(--phase-2)}
+.card.p3 .day-badge{background:var(--phase-3-bg);color:var(--phase-3)}
+.card.p4 .day-badge{background:var(--phase-4-bg);color:var(--phase-4)}
+
+/* activity list */
+.card ul{
+  list-style:none;display:flex;flex-direction:column;gap:0.55rem;
+}
+.card li{
+  position:relative;padding-left:1.4rem;
+  font-size:0.9rem;color:var(--text-dark);line-height:1.5;
+}
+.card li::before{
+  content:'';position:absolute;left:0;top:0.5em;
+  width:6px;height:6px;border-radius:50%;
+}
+.card.p1 li::before{background:var(--phase-1);opacity:0.5}
+.card.p2 li::before{background:var(--phase-2);opacity:0.5}
+.card.p3 li::before{background:var(--phase-3);opacity:0.5}
+.card.p4 li::before{background:var(--phase-4);opacity:0.5}
+
+/* daily schedule within card */
+.daily-schedule{
+  background:var(--parchment-dim);
+  border-radius:var(--radius-sm);
+  padding:0.8rem 1rem;
+}
+.daily-schedule-title{
+  font-size:0.68rem;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--text-muted);
+  margin-bottom:0.5rem;
+}
+.daily-slots{
+  display:flex;flex-wrap:wrap;gap:0.4rem;
+}
+.time-slot{
+  font-size:0.7rem;font-weight:500;
+  padding:0.2em 0.6em;border-radius:100px;
+  white-space:nowrap;letter-spacing:0.02em;
+}
+.card.p1 .time-slot{background:var(--phase-1-bg-strong);color:var(--phase-1)}
+.card.p2 .time-slot{background:var(--phase-2-bg-strong);color:var(--phase-2)}
+.card.p3 .time-slot{background:var(--phase-3-bg-strong);color:var(--phase-3)}
+.card.p4 .time-slot{background:var(--phase-4-bg-strong);color:var(--phase-4)}
+
+.card-note{
+  font-size:0.78rem;color:var(--text-muted);font-style:italic;
+  padding-top:0.3rem;border-top:1px solid var(--parchment-dim);
+  letter-spacing:0.02em;
+}
+
+/* responsive video embed */
+.video-wrap{
+  position:relative;padding-bottom:56.25%;height:0;
+  border-radius:var(--radius-sm);overflow:hidden;
+  background:var(--ink);
+}
+.video-wrap iframe{
+  position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+}
+
+/* youtube link card */
+.yt-link{
+  display:flex;align-items:center;gap:0.9rem;
+  background:var(--ink);
+  border:1px solid var(--border-subtle-strong);
+  border-radius:var(--radius-sm);
+  padding:0.9rem 1.1rem;
+  text-decoration:none;
+  transition:border-color 0.25s ease,background 0.25s ease;
+}
+.yt-link:hover{
+  border-color:rgba(196,163,90,0.35);
+  background:var(--ink-light);
+}
+.yt-icon{
+  width:40px;height:40px;border-radius:50%;
+  background:#c2453a;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.yt-icon::after{
+  content:'';display:block;
+  width:0;height:0;
+  border-style:solid;
+  border-width:7px 0 7px 12px;
+  border-color:transparent transparent transparent #fff;
+  margin-left:2px;
+}
+.yt-info{flex:1;min-width:0}
+.yt-title{
+  font-size:0.82rem;font-weight:600;color:var(--text-light);
+  letter-spacing:0.03em;line-height:1.3;
+}
+.yt-desc{
+  font-size:0.7rem;color:var(--text-light-muted);
+  margin-top:0.15rem;
+}
+.yt-arrow{color:var(--gold-dim);font-size:1.2rem;flex-shrink:0}
+
+/* =============================================
+   TECHNIQUES
+   ============================================= */
+.techniques{padding-top:1rem;padding-bottom:3rem}
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:0.9rem;
+}
+.tech-card{
+  background:var(--ink-light);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--radius-sm);
+  padding:1.1rem 1rem;text-align:center;
+  transition:border-color 0.25s ease,transform 0.2s ease;
+}
+.tech-card:hover{
+  border-color:rgba(196,163,90,0.25);
+  transform:translateY(-2px);
+}
+.tech-icon{font-size:1.5rem;margin-bottom:0.5rem;display:block}
+.tech-card h3{
+  font-size:0.82rem;font-weight:600;color:var(--text-light);
+  margin-bottom:0.25rem;letter-spacing:0.03em;
+}
+.tech-card p{
+  font-size:0.72rem;color:var(--text-light-muted);line-height:1.4;
+}
+
+/* =============================================
+   NOTES SECTION
+   ============================================= */
+.notes-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:0.9rem;
+}
+.note-card{
+  background:var(--ink-light);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--radius);
+  padding:1.3rem 1.4rem;
+  display:flex;gap:0.9rem;align-items:flex-start;
+}
+.note-num{
+  font-family:var(--font-mantra);
+  font-size:1.8rem;font-weight:600;
+  color:var(--gold-dim);line-height:1;
+  flex-shrink:0;opacity:0.6;
+}
+.note-card h4{
+  font-size:0.85rem;font-weight:600;color:var(--text-light);
+  margin-bottom:0.3rem;letter-spacing:0.03em;
+}
+.note-card p{
+  font-size:0.78rem;color:var(--text-light-muted);line-height:1.55;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer{
+  text-align:center;padding:3rem 1.5rem;
+  border-top:1px solid var(--border-subtle);
+}
+footer p{font-size:0.78rem;color:var(--text-light-muted);letter-spacing:0.06em}
+footer .closing-mantra{
+  font-family:var(--font-mantra);font-style:italic;
+  color:var(--gold-dim);font-size:0.9rem;margin-top:0.5rem;
+}
+
+/* =============================================
+   SCROLL REVEAL
+   ============================================= */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* =============================================
+   THEME TOGGLE
+   ============================================= */
+.theme-toggle{
+  position:fixed;top:1.2rem;right:1.2rem;z-index:1000;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--border-subtle-strong);
+  background:var(--ink-light);
+  color:var(--text-light);
+  font-size:1.15rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.25s ease,transform 0.2s ease;
+  box-shadow:0 2px 8px rgba(0,0,0,0.12);
+  -webkit-tap-highlight-color:transparent;
+}
+.theme-toggle:hover{
+  border-color:var(--gold);
+  box-shadow:0 0 18px rgba(196,163,90,0.18);
+  transform:scale(1.06);
+}
+.theme-toggle:active{transform:scale(0.94)}
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon{
+  line-height:1;transition:opacity 0.2s ease,transform 0.25s ease;
+}
+[data-theme="dark"] .theme-toggle .icon-sun{display:inline}
+[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+[data-theme="light"] .theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-moon{display:inline}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:0.01ms!important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" aria-label="切換深淺色模式" title="切換深淺色模式">
+  <span class="icon-sun" aria-hidden="true">☀️</span>
+  <span class="icon-moon" aria-hidden="true">🌙</span>
+</button>
+
+<main>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+<header class="hero">
+  <p class="mantra-display" aria-label="楞嚴咒梵音開篇">
+    Namaḥ sarva buddha bodhi-satve-bhyaḥ<br>
+    Namaḥ saptānāṃ samyak-saṃbuddha koṭīnāṃ<br>
+    sa-śrāvaka saṃghānāṃ · Namo loke arhattāṃ
+  </p>
+  <h1>楞嚴咒 · 記憶訓練計畫</h1>
+  <p class="subtitle">廿一日四階 · 梵音護體 · 從零開始</p>
+
+  <div class="timeline-mini" aria-label="四階段時間線">
+    <div class="timeline-dot t1"><span>第一階段 1–5日</span></div>
+    <div class="timeline-dash" aria-hidden="true"></div>
+    <div class="timeline-dot t2"><span>第二階段 6–10日</span></div>
+    <div class="timeline-dash" aria-hidden="true"></div>
+    <div class="timeline-dot t3"><span>第三階段 11–15日</span></div>
+    <div class="timeline-dash" aria-hidden="true"></div>
+    <div class="timeline-dot t4"><span>第四階段 16–21日</span></div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1: TEXT STRUCTURE ANALYSIS
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">第一步 · 認識文本</p>
+  <h2 class="section-title">文本結構分析</h2>
+  <p class="section-sub">在開始背誦之前，先理解這篇文章的骨架。<br>大悲咒全文共 14 行，可依語義和結構分為五大段。</p>
+
+  <!-- Structure table -->
+  <div class="structure-table-wrap reveal">
+  <table class="structure-table">
+    <thead>
+      <tr>
+        <th>段落</th>
+        <th>名稱</th>
+        <th>行數</th>
+        <th>內容特徵</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sec-num">第一段</td>
+        <td class="sec-name">歸敬 + 核心咒</td>
+        <td class="sec-lines">第 1 行</td>
+        <td class="sec-desc">Namah Ratna Trayaya… 開頭歸敬句，接 Om 啟動核心咒語主體，是全咒最長的一段</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第二段</td>
+        <td class="sec-name">彌勒段</td>
+        <td class="sec-lines">第 2 行</td>
+        <td class="sec-desc">Maitreya（彌勒菩薩）名號段落，以第一個 Svaha 收尾</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第三段</td>
+        <td class="sec-name">成就段</td>
+        <td class="sec-lines">第 3–5 行</td>
+        <td class="sec-desc">以 Siddhaya（成就）為核心的三句，每句 Svaha 結尾</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第四段</td>
+        <td class="sec-name">八聖號</td>
+        <td class="sec-lines">第 6–13 行</td>
+        <td class="sec-desc">八路護法 / 本尊名號，每句均以 Svaha 結尾，可用首字口訣記憶</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第五段</td>
+        <td class="sec-name">迴向結歸</td>
+        <td class="sec-lines">第 14 行</td>
+        <td class="sec-desc">回到歸敬句 Namah Ratna Trayaya…，形成首尾呼應的記憶閉環</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- Pattern highlights -->
+  <div class="pattern-grid reveal">
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">🔴</span>
+      <div>
+        <h4>Svaha 韻律節奏</h4>
+        <p>全文共 13 個 Svaha，每個都是天然分句標記。把它們想像成歌曲的副歌，每次出現都幫你重新定位。</p>
+      </div>
+    </div>
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">🔄</span>
+      <div>
+        <h4>疊詞對稱</h4>
+        <p>Sara Sara → Siri Siri → Suru Suru 三段漸進；Bodhiya Bodhiya / Bodhaya Bodhaya 成對出現。疊詞是大腦最愛的模式。</p>
+      </div>
+    </div>
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">⭕</span>
+      <div>
+        <h4>Om 啟動信號</h4>
+        <p>Tadyatha Om（即說咒曰）是咒語正文的正式起點。記住這個位置 = 掌握了核心咒的入口。</p>
+      </div>
+    </div>
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">🔁</span>
+      <div>
+        <h4>頭尾呼應閉環</h4>
+        <p>第一段與第五段皆以 Namah Ratna Trayaya… 開頭。背完最後一段自然回到開頭，形成記憶閉環。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2: FULL TEXT BREAKDOWN
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">第二步 · 通讀全文</p>
+  <h2 class="section-title">五段全文拆解</h2>
+  <p class="section-sub">以下是完整的大悲咒梵音文本，按五段結構排列。<br>不用一次看懂，先感受韻律，讓聲音在腦中留下印記。</p>
+
+  <div class="manuscript-grid">
+
+    <!-- Section 1: Core -->
+    <div class="ms-card s1 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第一段</span>
+        <span class="ms-title">歸敬 + 核心咒</span>
+        <span class="ms-tag">第 1 行</span>
+      </div>
+      <p class="ms-text">
+        Namah Ratna Trayaya Namo Arya Valokite Svaraya Bodhi Sattvaya Maha Sattvaya Maha Karunikaya Om Sarva Rabhaye Sudhanadasya Namas Krtva Imam Arya Valokite Svara Ramdhava Namo Narakindi Hrih Maha Vadhasame Sarva Arthadu Subham Ajeyam Sarva Sattva Namo Vasattva Namo Vaga Mavadudhu Tadyatha Om Avaloki Lokate Karate E Hrih Maha Bodhisattva Sarva Sarva Mala Mala Mahima Hrdayam Kuru Kuru Karmam Dhuru Dhuru Vajayate Maha Vajayate Dhara Dhara Dhrni Svaraya Cala Cala Mama Vamara Muktele Ehi Ehi Sina Sina Arsam Pracali Vasa Vasam Prasaya Huru Huru Mara Huru Huru Hr Sara Sara Siri Siri Suru Suru Bodhiya Bodhiya Bodhaya Bodhaya
+      </p>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="ms-card s2 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第二段</span>
+        <span class="ms-title">彌勒段</span>
+        <span class="ms-tag">第 2 行</span>
+      </div>
+      <p class="ms-text compact">
+        Maitreya Narakindi Dhrsnina Bhayamana Svaha
+      </p>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="ms-card s3 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第三段</span>
+        <span class="ms-title">成就段</span>
+        <span class="ms-tag">第 3–5 行</span>
+      </div>
+      <p class="ms-text compact">
+        Siddhaya Svaha &nbsp;·&nbsp;
+        Maha Siddhaya Svaha &nbsp;·&nbsp;
+        Siddha Yoge Svaraya Svaha
+      </p>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="ms-card s4 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第四段</span>
+        <span class="ms-title">八聖號</span>
+        <span class="ms-tag">第 6–13 行</span>
+      </div>
+      <p class="ms-text compact">
+        Narakindi Svaha &nbsp;·&nbsp;
+        Maranara Svaha &nbsp;·&nbsp;
+        Sira Sam Amukhaya Svaha &nbsp;·&nbsp;
+        Sarva Maha Asiddhaya Svaha &nbsp;·&nbsp;
+        Cakra Asiddhaya Svaha &nbsp;·&nbsp;
+        Padma Kastaya Svaha &nbsp;·&nbsp;
+        Narakindi Vagaraya Svaha &nbsp;·&nbsp;
+        Mavari Sankharaya Svaha
+      </p>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="ms-card s5 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第五段</span>
+        <span class="ms-title">迴向結歸</span>
+        <span class="ms-tag">第 14 行</span>
+      </div>
+      <p class="ms-text compact">
+        Namah Ratna Trayaya Namo Arya Valokite Svaraya Svaha &nbsp;·&nbsp;
+        Om Siddhyantu Mantra Padaya Svaha
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3: FOUR PHASE TRAINING PLAN
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">第三步 · 開始訓練</p>
+  <h2 class="section-title">四階段訓練計畫</h2>
+  <p class="section-sub">每天不超過一小時，分散練習效果遠勝集中突擊</p>
+
+  <div class="cards-grid">
+
+    <!-- Phase 1 -->
+    <article class="card p1 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第一階段</p>
+        <span class="day-badge">Day 1–2</span>
+      </div>
+      <h2>建立聽覺記憶</h2>
+      <a href="https://youtu.be/QH7J26UhT9c" target="_blank" rel="noopener" class="yt-link">
+        <span class="yt-icon" aria-hidden="true"></span>
+        <span class="yt-info">
+          <span class="yt-title">大悲咒梵音標準唱誦</span>
+          <span class="yt-desc">YouTube · 點擊在新分頁中播放</span>
+        </span>
+        <span class="yt-arrow" aria-hidden="true">↗</span>
+      </a>
+      <ul>
+        <li>👆 先聽上面的標準梵音錄音，設為手機鈴聲反覆薰習</li>
+        <li>不看文本，純跟讀 <strong>5 遍</strong>，讓聲音自然流入耳朵</li>
+        <li>指讀 <strong>3 遍</strong>，手指同步移動，在每個 Svaha 後畫「|」換氣符號</li>
+        <li>閉眼盲跟 <strong>3 遍</strong>，完全不依賴視覺</li>
+        <li>睡前播放錄音 15 分鐘，利用睡眠記憶鞏固機制</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">每日時間分配</p>
+        <div class="daily-slots">
+          <span class="time-slot">Day 1 跟讀+指讀+標記 約40min</span>
+          <span class="time-slot">Day 2 盲跟+分段朗讀+睡前音頻 約30min</span>
+        </div>
+      </div>
+      <p class="card-note">像學一首外語歌一樣去「唱」它，不要死記硬背</p>
+    </article>
+
+    <!-- Phase 2 -->
+    <article class="card p2 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第二階段</p>
+        <span class="day-badge">Day 3–4</span>
+      </div>
+      <h2>結構化拆解</h2>
+      <ul>
+        <li><strong>五段拆解法：</strong>歸敬核心咒 → 彌勒段 → 成就段 → 八聖號 → 迴向結歸，逐段擊破</li>
+        <li>每段遮住文本，只留第一句當提示，嘗試背出後核對，重複 3 次</li>
+        <li><strong>記憶鉤子：</strong>八聖號首字口訣「Na-Ma-Si-Sar-Ca-Pa-Na-Ma」，一句喚起整段</li>
+        <li>逐段疊加串聯背誦：第一→第二→第三→第四→第五</li>
+        <li>倒序練習：從第五段往前背，強化段落之間的雙向連結</li>
+        <li>錄音一次完整背誦，回聽標記所有卡住和錯誤處，精準打擊弱點</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">每日時間分配</p>
+        <div class="daily-slots">
+          <span class="time-slot">Day 3 早:第一段 午:二+三段 晚:第四段 約45min</span>
+          <span class="time-slot">Day 4 串聯+倒序+錯漏標記 約40min</span>
+        </div>
+      </div>
+      <p class="card-note">利用 13 個 Svaha 做天然節奏點，如歌曲副歌般串聯全文</p>
+    </article>
+
+    <!-- Phase 3 -->
+    <article class="card p3 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第三階段</p>
+        <span class="day-badge">Day 5–6</span>
+      </div>
+      <h2>鞏固與內化</h2>
+      <ul>
+        <li><strong>費曼輸出法：</strong>假裝你要教別人背大悲咒，大聲說出每一段的記憶技巧和意思</li>
+        <li>用筆完整抄寫一遍，手寫激活運動記憶腦區，與聽覺記憶形成雙通道</li>
+        <li>排隊、等車、洗澡……抓住所有碎片時間各背一次</li>
+        <li><strong>干擾抗練：</strong>邊走路邊背誦，測試身體分心時記憶是否穩固</li>
+        <li>請人隨機說一個關鍵詞（如 Cakra），從那裡往後接——訓練隨機存取能力</li>
+        <li>以 1.5 倍速挑戰背誦，確保每個音節仍清晰不糊</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">每日時間分配</p>
+        <div class="daily-slots">
+          <span class="time-slot">Day 5 費曼輸出+手寫+碎片背誦 約30min</span>
+          <span class="time-slot">Day 6 雙重任務+隨機起點+加速 約30min</span>
+        </div>
+      </div>
+      <p class="card-note">卡住處不要從頭來，只練那一小段 10 遍，精準修復</p>
+    </article>
+
+    <!-- Phase 4 -->
+    <article class="card p4 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第四階段</p>
+        <span class="day-badge">Day 7</span>
+      </div>
+      <h2>終極驗收</h2>
+      <ul>
+        <li>✅ 不看文本，一字不錯完整背出</li>
+        <li>✅ 節奏平穩，換氣點自然流暢</li>
+        <li>✅ 能在 <strong>3 分鐘</strong>內完成全文背誦</li>
+        <li>✅ 被打斷後能從斷點繼續，不需從頭來</li>
+        <li>✅ 24 小時後再次背誦，無新增錯誤</li>
+        <li>✅ 驗收完成後保持每週溫習 2–3 次，間隔遞增（3天→7天→14天）</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">驗收方式</p>
+        <div class="daily-slots">
+          <span class="time-slot">完整背誦錄音</span>
+          <span class="time-slot">對照文本逐字檢查</span>
+          <span class="time-slot">24h 後再次檢驗</span>
+        </div>
+      </div>
+      <p class="card-note">驗收不是終點，是長期記憶的起點。每週溫習，讓梵音永不褪色</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 4: MEMORY TECHNIQUES
+     ═══════════════════════════════════════════ -->
+<section class="techniques">
+  <p class="section-label">工具箱</p>
+  <h2 class="section-title">核心記憶技巧</h2>
+  <p class="section-sub">七種方法，多重感官，讓梵音自然銘刻</p>
+  <div class="tech-grid">
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🎵</span>
+      <h3>韻律錨定</h3>
+      <p>13 個 Svaha 做節奏點，如歌曲副歌般自然記憶</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🗂️</span>
+      <h3>空間分段</h3>
+      <p>五段法將 14 行拆成有意義的記憶單元</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🔗</span>
+      <h3>首字鉤子</h3>
+      <p>八聖號口訣「Na-Ma-Si-Sar-Ca-Pa-Na-Ma」串聯</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🔄</span>
+      <h3>疊詞加速</h3>
+      <p>Sara Sara / Bodhiya Bodhiya 天然韻律記憶點</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🔁</span>
+      <h3>頭尾呼應</h3>
+      <p>首尾同以 Namah Ratna Trayaya 形成記憶閉環</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🌙</span>
+      <h3>睡眠固化</h3>
+      <p>睡前聽、醒後背，利用睡眠記憶鞏固機制</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">👁️</span>
+      <h3>多感官輸入</h3>
+      <p>聽·看·念·寫四通道並用，深度激活不同腦區</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5: IMPORTANT NOTES
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">心法</p>
+  <h2 class="section-title">注意事項</h2>
+  <p class="section-sub">技巧是工具，心態是地基。這四條原則決定你能走多遠。</p>
+
+  <div class="notes-grid reveal">
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">01</span>
+      <div>
+        <h4>不要死記硬背</h4>
+        <p>這是有韻律的咒語，不是考試條文。像學一首外語歌一樣去「唱」它，讓旋律帶著文字自然流淌出來。</p>
+      </div>
+    </div>
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">02</span>
+      <div>
+        <h4>每天不超過 1 小時</h4>
+        <p>過量練習導致邊際效益遞減。大腦在休息時才真正鞏固記憶——分散到每天 30–45 分鐘，效果遠勝週末惡補。</p>
+      </div>
+    </div>
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">03</span>
+      <div>
+        <h4>卡住不求全</h4>
+        <p>某處反覆卡住時，不要每次都從頭開始。只練那一小段 10 遍，精準打擊弱點，直到它和上下文自然銜接。</p>
+      </div>
+    </div>
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">04</span>
+      <div>
+        <h4>保持恭敬心</h4>
+        <p>心態放鬆但莊重。緊張和焦慮是記憶的最大敵人，恭敬和平靜則讓大腦處於最佳學習狀態。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer>
+  <p>每日不超過 1 小時 · 保持恭敬放鬆之心 · 分散勝於集中</p>
+  <p class="closing-mantra">Om Siddhyantu Mantra Padaya Svaha</p>
+</footer>
+
+</main>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── Theme toggle ── */
+(function(){
+  var btn = document.querySelector('.theme-toggle');
+  var html = document.documentElement;
+
+  btn.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
+</script>
+
+</body>
+</html>
