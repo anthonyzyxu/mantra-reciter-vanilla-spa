@@ -34,6 +34,8 @@
   --tile-dabeizhou-hover: #4a6d60;
   --tile-lengyan: #2d3a5c;
   --tile-lengyan-hover: #384870;
+  --tile-pinyin: #5c3d2e;
+  --tile-pinyin-hover: #6e4a38;
 
   --text-light: #e8e3da;
   --text-light-muted: #9a958b;
@@ -61,6 +63,8 @@
   --tile-dabeizhou-hover: #6a9e8c;
   --tile-lengyan: #4a5a8a;
   --tile-lengyan-hover: #5a6c9e;
+  --tile-pinyin: #8a6040;
+  --tile-pinyin-hover: #9e7250;
 }
 
 /* =============================================
@@ -132,6 +136,10 @@ body{
   background:linear-gradient(160deg,var(--tile-lengyan) 0%,var(--tile-lengyan-hover) 100%);
   border:1px solid rgba(255,255,255,0.08);
 }
+.tile.pinyin{
+  background:linear-gradient(160deg,var(--tile-pinyin) 0%,var(--tile-pinyin-hover) 100%);
+  border:1px solid rgba(255,255,255,0.08);
+}
 
 /* tile icon */
 .tile-icon{
@@ -143,6 +151,7 @@ body{
 }
 .tile.dabeizhou .tile-icon{color:var(--gold-pale)}
 .tile.lengyan .tile-icon{color:#a0b4d0}
+.tile.pinyin .tile-icon{color:#d0b898}
 
 /* tile body */
 .tile-body{
@@ -156,6 +165,7 @@ body{
 }
 .tile.dabeizhou .tile-body .tile-label{color:#c8e0d0}
 .tile.lengyan .tile-body .tile-label{color:#c0cce0}
+.tile.pinyin .tile-body .tile-label{color:#e0d0c0}
 
 .tile-body h2{
   font-family:var(--font-display);
@@ -165,6 +175,7 @@ body{
 }
 .tile.dabeizhou .tile-body h2{color:#fff}
 .tile.lengyan .tile-body h2{color:#fff}
+.tile.pinyin .tile-body h2{color:#fff}
 
 .tile-body .tile-hint{
   font-family:var(--font-mantra);font-style:italic;
@@ -173,6 +184,7 @@ body{
 }
 .tile.dabeizhou .tile-body .tile-hint{color:#c8e0d0}
 .tile.lengyan .tile-body .tile-hint{color:#c0cce0}
+.tile.pinyin .tile-body .tile-hint{color:#e0d0c0}
 
 /* tile top accent line */
 .tile::before{
@@ -182,6 +194,7 @@ body{
 }
 .tile.dabeizhou::before{background:var(--gold)}
 .tile.lengyan::before{background:var(--vermillion)}
+.tile.pinyin::before{background:#d4a35a}
 
 /* =============================================
    FOOTER
@@ -261,6 +274,15 @@ body{
       <p class="tile-label">Śūraṅgama Mantra</p>
       <h2>楞嚴咒</h2>
       <p class="tile-hint">Namaḥ sarva buddha…<br>廿一日四階 · 193 行</p>
+    </div>
+  </a>
+
+  <a href="lengyanzhou-pinyin.html" class="tile pinyin">
+    <span class="tile-icon" aria-hidden="true">📖</span>
+    <div class="tile-body">
+      <p class="tile-label">Śūraṅgama · Phonetic</p>
+      <h2>楞嚴咒 注音</h2>
+      <p class="tile-hint">南無楞嚴會上佛菩薩…<br>五會神咒 · 中文注音</p>
     </div>
   </a>
 </nav>
