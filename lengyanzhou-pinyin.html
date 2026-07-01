@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>楞嚴咒 注音 · 記憶訓練計畫</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+(function(){
+  var theme = localStorage.getItem('theme');
+  if (!theme) {
+    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<style>
+/* =============================================
+   TOKENS
+   ============================================= */
+:root {
+  --ink: #16161f;
+  --ink-light: #1f1f2b;
+  --ink-card: #1c1c28;
+  --gold: #c4a35a;
+  --gold-bright: #d4b368;
+  --gold-dim: #8a7340;
+  --gold-pale: #e8d5a3;
+  --parchment: #f7f3eb;
+  --parchment-dim: #e8e1d5;
+  --vermillion: #c2453a;
+
+  --phase-1: #5a8a7a;
+  --phase-1-bg: rgba(90,138,122,0.08);
+  --phase-1-bg-strong: rgba(90,138,122,0.14);
+  --phase-2: #c4973a;
+  --phase-2-bg: rgba(196,151,58,0.08);
+  --phase-2-bg-strong: rgba(196,151,58,0.14);
+  --phase-3: #d4783c;
+  --phase-3-bg: rgba(212,120,60,0.08);
+  --phase-3-bg-strong: rgba(212,120,60,0.14);
+  --phase-4: #c2453a;
+  --phase-4-bg: rgba(194,69,58,0.08);
+  --phase-4-bg-strong: rgba(194,69,58,0.14);
+
+  --text-dark: #2d2923;
+  --text-muted: #6b6660;
+  --text-light: #e8e3da;
+  --text-light-muted: #9a958b;
+
+  --font-mantra: 'Cormorant Garamond','Noto Serif','Times New Roman',serif;
+  --font-display: 'Cormorant Garamond','Songti SC','Noto Serif SC',serif;
+  --font-body: 'Inter','PingFang SC','Noto Sans SC',system-ui,sans-serif;
+
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --max-width: 1100px;
+
+  --border-subtle: rgba(255,255,255,0.06);
+  --border-faint: rgba(255,255,255,0.03);
+  --border-subtle-strong: rgba(255,255,255,0.08);
+  --bg-overlay: rgba(255,255,255,0.02);
+  --bg-hover: rgba(255,255,255,0.015);
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.08);
+  --card-shadow-hover: 0 8px 25px rgba(0,0,0,0.18),0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* =============================================
+   LIGHT THEME
+   ============================================= */
+[data-theme="light"] {
+  --ink: #faf6ef;
+  --ink-light: #f0ebe0;
+  --ink-card: #fffef9;
+  --gold: #b3903f;
+  --gold-bright: #c4a35a;
+  --gold-dim: #8a7340;
+  --gold-pale: #8a6d2b;
+  --parchment: #fffef9;
+  --parchment-dim: #f0ebe0;
+  --text-dark: #2d2923;
+  --text-muted: #6b6660;
+  --text-light: #2d2923;
+  --text-light-muted: #5c5750;
+
+  --phase-1-bg: rgba(90,138,122,0.12);
+  --phase-1-bg-strong: rgba(90,138,122,0.20);
+  --phase-2-bg: rgba(196,151,58,0.12);
+  --phase-2-bg-strong: rgba(196,151,58,0.20);
+  --phase-3-bg: rgba(212,120,60,0.12);
+  --phase-3-bg-strong: rgba(212,120,60,0.20);
+  --phase-4-bg: rgba(194,69,58,0.12);
+  --phase-4-bg-strong: rgba(194,69,58,0.20);
+
+  --border-subtle: rgba(0,0,0,0.08);
+  --border-faint: rgba(0,0,0,0.04);
+  --border-subtle-strong: rgba(0,0,0,0.10);
+  --bg-overlay: rgba(0,0,0,0.02);
+  --bg-hover: rgba(0,0,0,0.03);
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);
+  --card-shadow-hover: 0 4px 16px rgba(0,0,0,0.10),0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:var(--font-body);
+  background:var(--ink);
+  color:var(--text-dark);
+  line-height:1.6;
+  overflow-x:hidden;
+  transition:background-color 0.3s ease,color 0.2s ease;
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero{
+  position:relative;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:clamp(3rem,10vh,6rem) 1.5rem clamp(2.5rem,6vh,4rem);
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(196,163,90,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.mantra-display{
+  font-family:var(--font-mantra);
+  font-size:clamp(1.2rem,3.5vw,2.2rem);
+  font-style:italic;color:var(--gold);
+  letter-spacing:0.02em;line-height:1.5;
+  max-width:38rem;
+  animation:mantra-breathe 6s ease-in-out infinite;
+  text-shadow:0 0 40px rgba(196,163,90,0.15);
+}
+@keyframes mantra-breathe{
+  0%,100%{opacity:0.85;text-shadow:0 0 40px rgba(196,163,90,0.10)}
+  50%{opacity:1;text-shadow:0 0 60px rgba(196,163,90,0.22)}
+}
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(2rem,6vw,3.4rem);
+  font-weight:600;color:var(--text-light);
+  margin-top:1.8rem;letter-spacing:0.04em;
+}
+.hero .subtitle{
+  color:var(--text-light-muted);
+  font-size:0.95rem;margin-top:0.6rem;letter-spacing:0.06em;
+}
+
+/* hero timeline */
+.timeline-mini{
+  display:flex;align-items:center;gap:0;
+  margin-top:2.5rem;flex-wrap:wrap;justify-content:center;
+}
+.timeline-dot{
+  display:flex;align-items:center;gap:0.5rem;
+  padding:0.4rem 0.9rem;
+}
+.timeline-dot::before{
+  content:'';width:10px;height:10px;border-radius:50%;flex-shrink:0;
+}
+.timeline-dot.t1::before{background:var(--phase-1)}
+.timeline-dot.t2::before{background:var(--phase-2)}
+.timeline-dot.t3::before{background:var(--phase-3)}
+.timeline-dot.t4::before{background:var(--phase-4)}
+.timeline-dot span{
+  font-size:0.78rem;font-weight:500;
+  color:var(--text-light-muted);letter-spacing:0.04em;white-space:nowrap;
+}
+.timeline-dash{width:1.5rem;height:1px;background:var(--gold-dim);opacity:0.4}
+
+/* =============================================
+   SECTIONS (shared)
+   ============================================= */
+section{
+  padding:2rem 1.5rem 4rem;
+  max-width:var(--max-width);margin:0 auto;
+}
+.section-label{
+  font-size:0.72rem;font-weight:600;letter-spacing:0.14em;
+  text-transform:uppercase;color:var(--gold-dim);
+  text-align:center;margin-bottom:0.6rem;
+}
+.section-title{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,3.5vw,2rem);
+  font-weight:600;color:var(--text-light);
+  text-align:center;letter-spacing:0.04em;margin-bottom:0.4rem;
+}
+.section-sub{
+  text-align:center;color:var(--text-light-muted);
+  font-size:0.85rem;margin-bottom:2rem;line-height:1.5;
+}
+
+/* =============================================
+   STRUCTURE OVERVIEW TABLE
+   ============================================= */
+.structure-table-wrap{
+  overflow-x:auto;
+  border-radius:var(--radius);
+  border:1px solid var(--border-subtle);
+}
+.structure-table{
+  width:100%;border-collapse:collapse;
+  font-size:0.85rem;min-width:600px;
+}
+.structure-table thead th{
+  text-align:left;padding:0.9rem 1rem;
+  font-size:0.7rem;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--gold-dim);
+  background:var(--bg-overlay);
+  border-bottom:1px solid var(--border-subtle);
+}
+.structure-table tbody td{
+  padding:0.75rem 1rem;
+  color:var(--text-light);
+  border-bottom:1px solid var(--border-faint);
+  vertical-align:top;line-height:1.5;
+}
+.structure-table tbody tr:last-child td{border-bottom:none}
+.structure-table tbody tr:hover{background:var(--bg-hover)}
+.structure-table .sec-num{
+  font-weight:600;color:var(--gold);
+  white-space:nowrap;width:1%;
+}
+.structure-table .sec-name{font-weight:600;white-space:nowrap;color:var(--text-light)}
+.structure-table .sec-lines{color:var(--text-light-muted);white-space:nowrap;font-size:0.8rem}
+.structure-table .sec-desc{color:var(--text-light-muted);font-size:0.82rem}
+
+/* =============================================
+   PATTERN HIGHLIGHTS
+   ============================================= */
+.pattern-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:0.9rem;margin-top:1.5rem;
+}
+.pattern-card{
+  background:var(--ink-light);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--radius-sm);
+  padding:1.1rem 1.2rem;
+  display:flex;gap:0.8rem;align-items:flex-start;
+}
+.pattern-icon{
+  font-size:1.3rem;flex-shrink:0;line-height:1;
+  margin-top:0.1rem;
+}
+.pattern-card h4{
+  font-size:0.8rem;font-weight:600;color:var(--text-light);
+  margin-bottom:0.2rem;letter-spacing:0.03em;
+}
+.pattern-card p{
+  font-size:0.75rem;color:var(--text-light-muted);line-height:1.5;
+}
+
+/* =============================================
+   MANUSCRIPT TEXT CARDS
+   ============================================= */
+.manuscript-grid{
+  display:flex;flex-direction:column;gap:1rem;
+}
+.ms-card{
+  background:var(--ink-card);
+  border:1px solid rgba(196,163,90,0.10);
+  border-radius:var(--radius);
+  padding:clamp(1.2rem,2.5vw,1.8rem);
+  position:relative;overflow:hidden;
+  transition:border-color 0.3s ease;
+}
+.ms-card:hover{border-color:rgba(196,163,90,0.25)}
+.ms-card::after{
+  content:'';position:absolute;top:0;left:0;
+  width:3px;height:100%;
+  border-radius:3px 0 0 3px;
+}
+.ms-card.s1::after{background:var(--phase-1)}
+.ms-card.s2::after{background:var(--phase-2)}
+.ms-card.s3::after{background:var(--phase-3)}
+.ms-card.s4::after{background:var(--phase-2)}
+.ms-card.s5::after{background:var(--gold)}
+.ms-card.s6::after{background:var(--phase-4)}
+
+.ms-header{
+  display:flex;align-items:baseline;gap:0.6rem;
+  margin-bottom:0.8rem;flex-wrap:wrap;
+}
+.ms-num{
+  font-size:0.68rem;font-weight:600;letter-spacing:0.1em;
+  text-transform:uppercase;color:var(--gold-dim);
+}
+.ms-title{
+  font-family:var(--font-display);
+  font-size:1rem;font-weight:600;color:var(--text-light);
+  letter-spacing:0.04em;
+}
+.ms-tag{
+  font-size:0.65rem;color:var(--text-light-muted);
+  border:1px solid var(--border-subtle-strong);
+  padding:0.15em 0.55em;border-radius:100px;
+}
+.ms-text{
+  font-family:var(--font-mantra);
+  font-size:clamp(0.85rem,1.5vw,1rem);
+  color:var(--gold-pale);
+  line-height:1.7;letter-spacing:0.015em;
+  word-break:break-word;
+}
+.ms-text.compact{font-size:0.82rem;line-height:1.6}
+
+/* =============================================
+   PHASE CARDS (2x2 grid)
+   ============================================= */
+.cards-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;position:relative;
+}
+@media(max-width:740px){.cards-grid{grid-template-columns:1fr;gap:1.2rem}}
+
+/* central mala connector */
+.cards-grid::before{
+  content:'';position:absolute;left:50%;top:2rem;bottom:2rem;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold-dim) 10%,var(--gold-dim) 90%,transparent);
+  opacity:0.2;pointer-events:none;
+}
+.cards-grid::after{
+  content:'';position:absolute;left:50%;transform:translateX(-50%);
+  top:2.5rem;bottom:2.5rem;width:6px;
+  background:
+    radial-gradient(circle at center,var(--phase-1) 2px,transparent 2px) 0 10%,
+    radial-gradient(circle at center,var(--phase-2) 2px,transparent 2px) 0 38%,
+    radial-gradient(circle at center,var(--phase-3) 2px,transparent 2px) 0 62%,
+    radial-gradient(circle at center,var(--phase-4) 2px,transparent 2px) 0 88%;
+  background-repeat:no-repeat;background-size:100% 25%;
+  opacity:0.45;pointer-events:none;
+}
+@media(max-width:740px){.cards-grid::before,.cards-grid::after{display:none}}
+
+/* card base */
+.card{
+  background:var(--parchment);
+  border-radius:var(--radius);
+  padding:clamp(1.5rem,3vw,2.2rem);
+  position:relative;
+  transition:transform 0.25s ease,box-shadow 0.25s ease;
+  box-shadow:var(--card-shadow);
+  display:flex;flex-direction:column;gap:1rem;
+}
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--card-shadow-hover);
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.card.p1::before{background:var(--phase-1)}
+.card.p2::before{background:var(--phase-2)}
+.card.p3::before{background:var(--phase-3)}
+.card.p4::before{background:var(--phase-4)}
+
+.card-header{
+  display:flex;align-items:center;justify-content:space-between;gap:0.8rem;
+}
+.card-phase-label{
+  font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+}
+.card.p1 .card-phase-label{color:var(--phase-1)}
+.card.p2 .card-phase-label{color:var(--phase-2)}
+.card.p3 .card-phase-label{color:var(--phase-3)}
+.card.p4 .card-phase-label{color:var(--phase-4)}
+
+.card h2{
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,2vw,1.35rem);
+  font-weight:600;color:var(--text-dark);
+  line-height:1.3;letter-spacing:0.03em;
+}
+.day-badge{
+  display:inline-block;font-size:0.7rem;font-weight:600;
+  padding:0.2em 0.7em;border-radius:100px;
+  white-space:nowrap;letter-spacing:0.04em;
+}
+.card.p1 .day-badge{background:var(--phase-1-bg);color:var(--phase-1)}
+.card.p2 .day-badge{background:var(--phase-2-bg);color:var(--phase-2)}
+.card.p3 .day-badge{background:var(--phase-3-bg);color:var(--phase-3)}
+.card.p4 .day-badge{background:var(--phase-4-bg);color:var(--phase-4)}
+
+/* activity list */
+.card ul{
+  list-style:none;display:flex;flex-direction:column;gap:0.55rem;
+}
+.card li{
+  position:relative;padding-left:1.4rem;
+  font-size:0.9rem;color:var(--text-dark);line-height:1.5;
+}
+.card li::before{
+  content:'';position:absolute;left:0;top:0.5em;
+  width:6px;height:6px;border-radius:50%;
+}
+.card.p1 li::before{background:var(--phase-1);opacity:0.5}
+.card.p2 li::before{background:var(--phase-2);opacity:0.5}
+.card.p3 li::before{background:var(--phase-3);opacity:0.5}
+.card.p4 li::before{background:var(--phase-4);opacity:0.5}
+
+/* daily schedule within card */
+.daily-schedule{
+  background:var(--parchment-dim);
+  border-radius:var(--radius-sm);
+  padding:0.8rem 1rem;
+}
+.daily-schedule-title{
+  font-size:0.68rem;font-weight:600;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--text-muted);
+  margin-bottom:0.5rem;
+}
+.daily-slots{
+  display:flex;flex-wrap:wrap;gap:0.4rem;
+}
+.time-slot{
+  font-size:0.7rem;font-weight:500;
+  padding:0.2em 0.6em;border-radius:100px;
+  white-space:nowrap;letter-spacing:0.02em;
+}
+.card.p1 .time-slot{background:var(--phase-1-bg-strong);color:var(--phase-1)}
+.card.p2 .time-slot{background:var(--phase-2-bg-strong);color:var(--phase-2)}
+.card.p3 .time-slot{background:var(--phase-3-bg-strong);color:var(--phase-3)}
+.card.p4 .time-slot{background:var(--phase-4-bg-strong);color:var(--phase-4)}
+
+.card-note{
+  font-size:0.78rem;color:var(--text-muted);font-style:italic;
+  padding-top:0.3rem;border-top:1px solid var(--parchment-dim);
+  letter-spacing:0.02em;
+}
+
+/* responsive video embed */
+.video-wrap{
+  position:relative;padding-bottom:56.25%;height:0;
+  border-radius:var(--radius-sm);overflow:hidden;
+  background:var(--ink);
+}
+.video-wrap iframe{
+  position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+}
+
+/* youtube link card */
+.yt-link{
+  display:flex;align-items:center;gap:0.9rem;
+  background:var(--ink);
+  border:1px solid var(--border-subtle-strong);
+  border-radius:var(--radius-sm);
+  padding:0.9rem 1.1rem;
+  text-decoration:none;
+  transition:border-color 0.25s ease,background 0.25s ease;
+}
+.yt-link:hover{
+  border-color:rgba(196,163,90,0.35);
+  background:var(--ink-light);
+}
+.yt-icon{
+  width:40px;height:40px;border-radius:50%;
+  background:#c2453a;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.yt-icon::after{
+  content:'';display:block;
+  width:0;height:0;
+  border-style:solid;
+  border-width:7px 0 7px 12px;
+  border-color:transparent transparent transparent #fff;
+  margin-left:2px;
+}
+.yt-info{flex:1;min-width:0}
+.yt-title{
+  font-size:0.82rem;font-weight:600;color:var(--text-light);
+  letter-spacing:0.03em;line-height:1.3;
+}
+.yt-desc{
+  font-size:0.7rem;color:var(--text-light-muted);
+  margin-top:0.15rem;
+}
+.yt-arrow{color:var(--gold-dim);font-size:1.2rem;flex-shrink:0}
+
+/* =============================================
+   TECHNIQUES
+   ============================================= */
+.techniques{padding-top:1rem;padding-bottom:3rem}
+.tech-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+  gap:0.9rem;
+}
+.tech-card{
+  background:var(--ink-light);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--radius-sm);
+  padding:1.1rem 1rem;text-align:center;
+  transition:border-color 0.25s ease,transform 0.2s ease;
+}
+.tech-card:hover{
+  border-color:rgba(196,163,90,0.25);
+  transform:translateY(-2px);
+}
+.tech-icon{font-size:1.5rem;margin-bottom:0.5rem;display:block}
+.tech-card h3{
+  font-size:0.82rem;font-weight:600;color:var(--text-light);
+  margin-bottom:0.25rem;letter-spacing:0.03em;
+}
+.tech-card p{
+  font-size:0.72rem;color:var(--text-light-muted);line-height:1.4;
+}
+
+/* =============================================
+   NOTES SECTION
+   ============================================= */
+.notes-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:0.9rem;
+}
+.note-card{
+  background:var(--ink-light);
+  border:1px solid var(--border-subtle);
+  border-radius:var(--radius);
+  padding:1.3rem 1.4rem;
+  display:flex;gap:0.9rem;align-items:flex-start;
+}
+.note-num{
+  font-family:var(--font-mantra);
+  font-size:1.8rem;font-weight:600;
+  color:var(--gold-dim);line-height:1;
+  flex-shrink:0;opacity:0.6;
+}
+.note-card h4{
+  font-size:0.85rem;font-weight:600;color:var(--text-light);
+  margin-bottom:0.3rem;letter-spacing:0.03em;
+}
+.note-card p{
+  font-size:0.78rem;color:var(--text-light-muted);line-height:1.55;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer{
+  text-align:center;padding:3rem 1.5rem;
+  border-top:1px solid var(--border-subtle);
+}
+footer p{font-size:0.78rem;color:var(--text-light-muted);letter-spacing:0.06em}
+footer .closing-mantra{
+  font-family:var(--font-mantra);font-style:italic;
+  color:var(--gold-dim);font-size:0.9rem;margin-top:0.5rem;
+}
+
+/* =============================================
+   SCROLL REVEAL
+   ============================================= */
+.reveal{
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.6s ease,transform 0.6s ease;
+}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* =============================================
+   THEME TOGGLE
+   ============================================= */
+.theme-toggle{
+  position:fixed;top:1.2rem;right:1.2rem;z-index:1000;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--border-subtle-strong);
+  background:var(--ink-light);
+  color:var(--text-light);
+  font-size:1.15rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.25s ease,transform 0.2s ease;
+  box-shadow:0 2px 8px rgba(0,0,0,0.12);
+  -webkit-tap-highlight-color:transparent;
+}
+.theme-toggle:hover{
+  border-color:var(--gold);
+  box-shadow:0 0 18px rgba(196,163,90,0.18);
+  transform:scale(1.06);
+}
+.theme-toggle:active{transform:scale(0.94)}
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon{
+  line-height:1;transition:opacity 0.2s ease,transform 0.25s ease;
+}
+[data-theme="dark"] .theme-toggle .icon-sun{display:inline}
+[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+[data-theme="light"] .theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-moon{display:inline}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+/* back link */
+.back-home{
+  position:fixed;top:1.2rem;left:1.2rem;z-index:1000;
+  display:flex;align-items:center;gap:0.35rem;
+  font-family:var(--font-body);
+  font-size:0.78rem;font-weight:500;color:var(--text-light-muted);
+  text-decoration:none;
+  padding:0.4rem 0.8rem;
+  border-radius:100px;
+  border:1px solid var(--border-subtle-strong);
+  background:var(--ink-light);
+  transition:color 0.25s ease,border-color 0.25s ease,background 0.25s ease;
+  letter-spacing:0.03em;
+  -webkit-tap-highlight-color:transparent;
+}
+.back-home:hover{color:var(--gold);border-color:var(--gold)}
+.back-home .back-arrow{font-size:1rem;line-height:1}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:0.01ms!important;
+  }
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" aria-label="切換深淺色模式" title="切換深淺色模式">
+  <span class="icon-sun" aria-hidden="true">☀️</span>
+  <span class="icon-moon" aria-hidden="true">🌙</span>
+</button>
+
+<a href="index.html" class="back-home" title="返回首頁">
+  <span class="back-arrow" aria-hidden="true">←</span> 首頁
+</a>
+
+<main>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+<header class="hero">
+  <p class="mantra-display" aria-label="楞嚴咒開篇">
+    南無楞嚴會上佛菩薩（三稱）<br>
+    妙湛總持不動尊　首楞嚴王世希有<br>
+    銷我億劫顛倒想　不歷僧祇獲法身
+  </p>
+  <h1>楞嚴咒 注音 · 記憶訓練計畫</h1>
+  <p class="subtitle">五會神咒 · 中文注音 · 漢梵對照</p>
+
+  <div class="timeline-mini" aria-label="四階段時間線">
+    <div class="timeline-dot t1"><span>第一階段 1–5日</span></div>
+    <div class="timeline-dash" aria-hidden="true"></div>
+    <div class="timeline-dot t2"><span>第二階段 6–10日</span></div>
+    <div class="timeline-dash" aria-hidden="true"></div>
+    <div class="timeline-dot t3"><span>第三階段 11–15日</span></div>
+    <div class="timeline-dash" aria-hidden="true"></div>
+    <div class="timeline-dot t4"><span>第四階段 16–21日</span></div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 1: TEXT STRUCTURE ANALYSIS
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">第一步 · 認識文本</p>
+  <h2 class="section-title">文本結構分析</h2>
+  <p class="section-sub">在開始背誦之前，先理解這篇文章的骨架。<br>楞嚴咒全文共 428 行，依自然段落可分為咒前與五會共六段。</p>
+
+  <!-- Structure table -->
+  <div class="structure-table-wrap reveal">
+  <table class="structure-table">
+    <thead>
+      <tr>
+        <th>段落</th>
+        <th>名稱</th>
+        <th>內容特徵</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="sec-num">咒前</td>
+        <td class="sec-name">啟教因緣</td>
+        <td class="sec-desc">阿難讚佛偈、三歸依、世尊放光說咒 — 全咒的背景與緣起</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第一會</td>
+        <td class="sec-name">毘盧真法會</td>
+        <td class="sec-desc">歸敬三寶、五部如來、諸大菩薩護法 — 建立咒語的護法壇場</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第二會</td>
+        <td class="sec-name">釋尊應化會</td>
+        <td class="sec-desc">hūṃ 字真言頻現，光中化佛、摧破諸魔 — 咒語力量開始啟動</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第三會</td>
+        <td class="sec-name">觀音合同會</td>
+        <td class="sec-desc">諸怖畏與諸鬼神的破除，以「訖唎擔」為段落標記反覆降伏</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第四會</td>
+        <td class="sec-name">剛藏折攝會</td>
+        <td class="sec-desc">「泮咤」雷音如霹靂，遍破一切天魔外道，全咒最具爆發力</td>
+      </tr>
+      <tr>
+        <td class="sec-num">第五會</td>
+        <td class="sec-name">文殊弘傳會</td>
+        <td class="sec-desc">結界護身、百病消除，以「盤曇迦嚧彌」層層守護，最後歸於根本咒</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- Pattern highlights -->
+  <div class="pattern-grid reveal">
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">📿</span>
+      <div>
+        <h4>「訖唎擔」段落標記</h4>
+        <p>第三會中重複出現 20+ 次，每次標記一個被降伏的對象，如念珠般清晰。</p>
+      </div>
+    </div>
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">⚡</span>
+      <div>
+        <h4>「泮咤」雷音</h4>
+        <p>第四會中連續轟擊，是拼音版中最具爆發力的咒語段落。</p>
+      </div>
+    </div>
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">🔄</span>
+      <div>
+        <h4>「虎合牛 都盧雍」行動真言</h4>
+        <p>第二會反覆出現，形成強烈的韻律循環。</p>
+      </div>
+    </div>
+    <div class="pattern-card">
+      <span class="pattern-icon" aria-hidden="true">🏯</span>
+      <div>
+        <h4>「毗陀夜闍 嗔陀夜彌 雞囉夜彌」三段式</h4>
+        <p>第三會結尾的反覆句型，三句一組層層推進。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2: FULL TEXT BREAKDOWN
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">第二步 · 通讀全文</p>
+  <h2 class="section-title">六段全文拆解</h2>
+  <p class="section-sub">以下是完整的楞嚴咒注音文本，按六段結構排列。<br>篇幅較長，不用一次讀完——先感受各段的韻律特徵，讓聲音在腦中留下印記。</p>
+
+  <div class="manuscript-grid">
+
+    <!-- Card 1: 咒前 -->
+    <div class="ms-card s1 reveal">
+      <div class="ms-header">
+        <span class="ms-num">咒前</span>
+        <span class="ms-title">啟教因緣</span>
+        <span class="ms-tag">第 1–20 行</span>
+      </div>
+      <p class="ms-text">
+        南无楞严会上佛菩萨（三称）<br>
+        <br>
+        妙湛总持不动尊　首楞严王世希有<br>
+        销我亿劫颠倒想　不历僧祇获法身<br>
+        <br>
+        愿今得果成宝王　还度如是恒沙众<br>
+        <br>
+        将此深心奉尘刹　是则名为报佛恩<br>
+        伏请世尊为证明　五浊恶世誓先入<br>
+        如一众生未成佛　终不于此取泥洹<br>
+        <br>
+        大雄大力大慈悲　希更审除微细惑<br>
+        令我早登无上觉　于十方界坐道场<br>
+        舜若多性可销亡　烁迦罗心无动转<br>
+        <br>
+        南无常住十方佛　南无常住十方法　南无常住十方僧<br>
+        <br>
+        南无释迦牟尼佛　南无佛顶首楞严<br>
+        南无观世音菩萨　南无金刚藏菩萨<br>
+        <br>
+        尔时世尊，从肉髻中，涌百宝光。光中涌出，千叶宝莲。<br>
+        有化如来，坐宝华中。顶放十道，百宝光明。<br>
+        <br>
+        一一光明，皆遍示现，十恒河沙，金刚密迹，擎山持杵，遍虚空界。<br>
+        大众仰观，畏爱兼抱。求佛哀佑，<br>
+        <br>
+        一心听佛，无见顶相，放光如来，宣说神咒。<br>
+      </p>
+    </div>
+
+    <!-- Card 2: 第一會 -->
+    <div class="ms-card s2 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第一會</span>
+        <span class="ms-title">毘盧真法會</span>
+        <span class="ms-tag">第 21–150 行</span>
+      </div>
+      <p class="ms-text compact">
+        nā mō sà dàn tuō sū qié duō yē e là hē dì sānmiǎosānpútuó xiě<br>
+        南无萨怛他.苏伽多耶.阿啰诃帝.三藐三菩陀写<br>
+        <br>
+        nā mō sà dàn tuō fótuó jùzhī sěiníshàn<br>
+        南无萨怛他 佛陀俱胝瑟尼钐<br>
+        <br>
+        nā mō sà pó bó tuó bó dì sà duō pí bì<br>
+        南无萨婆.勃陀勃地.萨跢鞞弊<br>
+        <br>
+        nā mō sà duōnán sānmiǎosānpútuó jù zhī nán<br>
+        南无萨多南.三藐三菩陀.俱知喃<br>
+        <br>
+        suō shě là pó jiā sēngqiénán<br>
+        娑舍啰婆迦.僧伽喃<br>
+        <br>
+        nā mō lú jī e luó hàn duōnán<br>
+        南无卢鸡阿罗汉跢喃<br>
+        <br>
+        nā mō sū lú duō bō nuónán<br>
+        南无苏卢多波那喃<br>
+        <br>
+        nā mō suō jié lìtuó qié mínán<br>
+        南无娑羯唎陀伽弥喃<br>
+        <br>
+        nā mō lú jī sānmiǎo qiéduōnán<br>
+        南无卢鸡三藐伽哆喃<br>
+        <br>
+        sānmiǎo qiébō là dǐ bō duō nuó nán<br>
+        三藐伽波啰.底 波多那喃<br>
+        <br>
+        nā mō tí pó lí sěi nǎn<br>
+        南无提婆离瑟赧<br>
+        <br>
+        nā mō xī tuó yē pí dì yē tuó là lí sěi nǎn<br>
+        南无悉陀耶.毗地耶.陀啰离瑟赧<br>
+        <br>
+        shě bō nú jiē là hē suō hē suō là mó tuōnán<br>
+        舍波奴.揭啰诃.娑诃娑啰摩他喃<br>
+        <br>
+        nā mō bá là hē mó ní<br>
+        南无跋啰诃摩尼<br>
+        <br>
+        nā mō yīn tuó là yē<br>
+        南无因陀啰耶<br>
+        <br>
+        nā mō pó qié pó dì lú tuó là yē wū mó bō dì suō xī yè yē<br>
+        南无婆伽婆帝 卢陀啰耶 乌摩般帝 娑醯夜耶<br>
+        <br>
+        nā mō pó qié pó dì nuó là yě ná yē<br>
+        南无婆伽婆帝 那啰野拏耶<br>
+        <br>
+        bō zhē mó hē sān mù tuó là<br>
+        盘遮摩诃.三慕陀啰<br>
+        <br>
+        nā mō xī jié lì duō yē<br>
+        南无悉羯唎多耶<br>
+        <br>
+        nā mō pó qié pó dì mó hē jiā là yē<br>
+        南无婆伽婆帝 摩诃迦啰耶<br>
+        <br>
+        dì lì bō lá nà qié là pí tuó là bō ná jiā là yē<br>
+        地唎般剌那伽啰 毗陀啰.波拏迦啰耶<br>
+        <br>
+        e dì mù dì shīmó shě nuó ní pó xī ní<br>
+        阿地目帝 尸摩舍那泥.婆悉泥<br>
+        <br>
+        mó dá lì qié ná<br>
+        摩怛唎伽拏<br>
+        <br>
+        nā mō xī jié lì duō yē<br>
+        南无悉羯唎多耶<br>
+        <br>
+        nā mō pó qié pó dì duōtuō qiéduō jù là yē<br>
+        南无婆伽婆帝 多他伽跢俱啰耶<br>
+        <br>
+        nā mō bō tóu mó jù là yē<br>
+        南无般头摩.俱啰耶<br>
+        <br>
+        nā mō bá shé là jù là yē<br>
+        南无跋阇啰.俱啰耶<br>
+        <br>
+        nā mō mó ní jù là yē<br>
+        南无摩尼俱啰耶<br>
+        <br>
+        nā mō qié shé jù là yē<br>
+        南无伽阇俱啰耶<br>
+        <br>
+        nā mō pó qié pó dì dì lì chá shū là xī nà<br>
+        南无婆伽婆帝 帝唎茶.输啰西那<br>
+        <br>
+        bō là hē là ná là shé yē duò tuō qiéduōyē<br>
+        波啰诃啰拏啰阇耶 跢他伽多耶<br>
+        <br>
+        nā mō pó qié pó dì<br>
+        南无婆伽婆帝<br>
+        <br>
+        nā mō e míduō pó yē duō tuō qiéduōyē<br>
+        南无阿弥多婆耶 跢他伽多耶<br>
+        <br>
+        e là hē dì sānmiǎosānpútuó yē<br>
+        阿啰诃帝 三藐三菩陀耶<br>
+        <br>
+        nā mō pó qié pó dì e chú pí yē<br>
+        南无婆伽婆帝 阿刍鞞耶<br>
+        <br>
+        duō tuō qiéduōyē e là hē dì sānmiǎosān pútuó yē<br>
+        跢他伽多耶 阿啰诃帝 三藐三菩陀耶<br>
+        <br>
+        nā mō pó qié pó dì pí shā shéyē jù lú fèizhù lì yē<br>
+        南无婆伽婆帝 鞞沙阇耶 俱嚧吠柱唎耶<br>
+        <br>
+        bō là pó là shé yē duò tuō qiéduōyē<br>
+        般啰婆啰阇耶 跢他伽多耶<br>
+        <br>
+        nā mō pó qié pó dì sān bǔ shībì duò<br>
+        南无婆伽婆帝 三补师毖多<br>
+        <br>
+        sàlián nà là lá shé yē duōtuō qiéduōyē<br>
+        萨怜捺啰.剌阇耶 跢他伽多耶<br>
+        <br>
+        e là hē dì sānmiǎo sānpútuó yē<br>
+        阿啰诃帝 三藐三菩陀耶<br>
+        <br>
+        nā mō pó qié pó dì shě jī yě mǔ nuó yè<br>
+        南无婆伽婆帝 舍鸡野.母那曳<br>
+        <br>
+        duōtuō qiéduōyē e là hē dì sānmiǎo sānpútuó yē<br>
+        跢他伽多耶 阿啰诃帝 三藐三菩陀耶<br>
+        <br>
+        nā mō pó qié pó dì là dàn nà jī dū là shé yē<br>
+        南无婆伽婆帝 剌怛那.鸡都啰阇耶<br>
+        <br>
+        duōtuō qiéduōyē e là hē dì sānmiǎosān pútuó yē<br>
+        跢他伽多耶 阿啰诃帝 三藐三菩陀耶<br>
+        <br>
+        dì piáo nā mō sà jié lì duō<br>
+        帝瓢.南无萨羯唎多<br>
+        <br>
+        yì tán póqié póduō sà dàntuō qié dū sěiníshàn<br>
+        翳昙婆伽婆多 萨怛他.伽都瑟尼钐<br>
+        <br>
+        sà dàn duō bō dá lán<br>
+        萨怛多.般怛嚂<br>
+        <br>
+        nā mō e pó là shìdān bō là dì yáng qí là<br>
+        南无阿婆啰视躭 般啰帝.扬歧啰<br>
+        <br>
+        sà là pó bù duō jiē là hē<br>
+        萨啰婆部多.揭啰诃<br>
+        <br>
+        ní jié là hē jié jiā là hē ní<br>
+        尼揭啰诃.羯迦啰诃尼<br>
+        <br>
+        bá là bì dì yē chì tuó nǐ<br>
+        跋啰毖地耶.叱陀你<br>
+        <br>
+        e jiā là mì lì zhù bō lì dàn là yē níngjiélì<br>
+        阿迦啰密唎柱 般唎怛啰耶.儜揭唎<br>
+        <br>
+        sà là pó pántuónuó mù chā ní<br>
+        萨啰婆.盘陀那.目叉尼<br>
+        <br>
+        sà là pó tù sěi zhà tù xī fá bō nà nǐ fá là ní<br>
+        萨啰婆.突瑟咤 突悉乏.般那你 伐啰尼<br>
+        <br>
+        zhě dū là shì dì nán<br>
+        赭都啰失帝南<br>
+        <br>
+        jié là hē suō hē sà là ruò shé<br>
+        羯啰诃.娑诃萨啰若阇<br>
+        <br>
+        píduō bēng suō nà jié lì<br>
+        毗多崩.娑那羯唎<br>
+        <br>
+        e sěi zhàbìng shě dì nán<br>
+        阿瑟咤冰 舍帝南<br>
+        <br>
+        nà chā chàdàn làruòshé<br>
+        那叉剎怛啰若阇<br>
+        <br>
+        bō là sà tuó nà jié lì<br>
+        波啰萨陀那羯唎<br>
+        <br>
+        e sěi zhà nán<br>
+        阿瑟咤南<br>
+        <br>
+        mó hē jié là hē ruòshé<br>
+        摩诃揭啰诃若阇<br>
+        <br>
+        píduō bēng sà nà jié lì<br>
+        毗多崩.萨那羯唎<br>
+        <br>
+        sà pó shě dū lú nǐ pó là ruò shé<br>
+        萨婆舍都嚧 你婆啰若阇<br>
+        <br>
+        hū lán tù xī fá nànzhē nà shě ní<br>
+        呼蓝突悉乏.难遮那舍尼<br>
+        <br>
+        bì shā shě xī dàn là<br>
+        毖沙舍.悉怛啰<br>
+        <br>
+        e jí ní wūtuó jiālà ruòshé<br>
+        阿吉尼.乌陀迦啰若阇<br>
+        <br>
+        e bō là shì duō jū là<br>
+        阿般啰视多具啰<br>
+        <br>
+        mó hē bōlà zhànchí<br>
+        摩诃般啰战持<br>
+        <br>
+        mó hē dié duō<br>
+        摩诃迭多<br>
+        <br>
+        mó hē dì shé<br>
+        摩诃帝阇<br>
+        <br>
+        mó hē shuìduō shépólà<br>
+        摩诃税多阇婆啰<br>
+        <br>
+        mó hē bá là pán tuó là pó xī nǐ<br>
+        摩诃跋啰盘陀啰.婆悉你<br>
+        <br>
+        e lì yē duō là<br>
+        阿唎耶多啰<br>
+        <br>
+        pí lì jù zhī<br>
+        毗唎俱知<br>
+        <br>
+        shì pó píshéyē<br>
+        誓婆毗阇耶<br>
+        <br>
+        bá shé là mó lǐ dǐ<br>
+        跋阇啰.摩礼底<br>
+        <br>
+        pí shě lú duō<br>
+        毗舍嚧多<br>
+        <br>
+        bóténg wǎngjiā<br>
+        勃腾罔迦<br>
+        <br>
+        bá shé là zhìhè nuó e zhē<br>
+        跋阇啰.制喝那阿遮<br>
+        <br>
+        mó là zhì pó<br>
+        摩啰制婆<br>
+        <br>
+        bō là zhìduō<br>
+        般啰质多<br>
+        <br>
+        bá shélà shànchí<br>
+        跋阇啰擅持<br>
+        <br>
+        pí shě là zhē<br>
+        毗舍啰遮<br>
+        <br>
+        shànduōshě pí tí pó bǔ shì duō<br>
+        扇多舍.鞞提婆.补视多<br>
+        <br>
+        sū mó lú bō<br>
+        苏摩嚧波<br>
+        <br>
+        mó hē shuìduō<br>
+        摩诃税多<br>
+        <br>
+        e lì yē duō là<br>
+        阿唎耶多啰<br>
+        <br>
+        mó hē pó là e bō là<br>
+        摩诃婆啰阿般啰<br>
+        <br>
+        bá shé là shāngjiēlà zhìpó<br>
+        跋阇啰.商揭啰制婆<br>
+        <br>
+        bá shé là jù mó lì<br>
+        跋阇啰俱摩唎<br>
+        <br>
+        jù lán tuó lì<br>
+        俱蓝陀唎<br>
+        <br>
+        bá shé là hè sà duōzhē<br>
+        跋阇啰.喝萨多遮<br>
+        <br>
+        pí dì yē qiánzhēnuó mó lì jiā<br>
+        毗地耶.干遮那.摩唎迦<br>
+        <br>
+        kù sū mǔ pó jié là duō nà<br>
+        啒苏母.婆羯啰多那<br>
+        <br>
+        pí lú zhē nà jù lì yē<br>
+        鞞嚧遮那俱唎耶<br>
+        <br>
+        yè là tù sěi ní shàn<br>
+        夜啰菟瑟尼钐<br>
+        <br>
+        pí zhé lán pó mó ní zhē<br>
+        毗折蓝婆.摩尼遮<br>
+        <br>
+        bá shé là jiā nà jiā bō là pó<br>
+        跋阇啰.迦那迦波啰婆<br>
+        <br>
+        lú shé nà bá shé là dùnzhìzhē shuìduōzhē<br>
+        嚧阇那跋阇啰.顿稚遮 税多遮<br>
+        <br>
+        jiā mó là chà shē shī bō là pó<br>
+        迦摩啰 剎奢尸.波啰婆<br>
+        <br>
+        yì dì yí dì mǔ tuó là jié ná<br>
+        翳帝夷帝 母陀啰羯拏<br>
+        <br>
+        suō pí là chàn jué fàn dū<br>
+        娑鞞啰忏 掘梵都<br>
+        <br>
+        yìn tù nà mó mó xiě<br>
+        印兔那.么么写<br>
+      </p>
+    </div>
+
+    <!-- Card 3: 第二會 -->
+    <div class="ms-card s3 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第二會</span>
+        <span class="ms-title">釋尊應化會</span>
+        <span class="ms-tag">第 151–180 行</span>
+      </div>
+      <p class="ms-text compact">
+        wū xìn lì sěi jiē ná bō lá shě xī duō<br>
+        乌合牛 唎瑟揭拏 般剌舍悉多<br>
+        <br>
+        sàdàntuō qié dū sěiníshàn<br>
+        萨怛他.伽都瑟尼钐<br>
+        <br>
+        hǔ xìn dū lú yōng<br>
+        虎合牛 都卢雍<br>
+        <br>
+        zhān pó nà<br>
+        瞻婆那<br>
+        <br>
+        hǔ xìn dū lú yōng<br>
+        虎合牛 都卢雍<br>
+        <br>
+        xī dān pó nà<br>
+        悉耽婆那<br>
+        <br>
+        hǔ xìn dū lú yōng<br>
+        虎合牛 都卢雍<br>
+        <br>
+        bō là sěi dìyē sān bō chā ná jié là<br>
+        波啰瑟地耶.三般叉.拏羯啰<br>
+        <br>
+        hǔ xìn dū lú yōng<br>
+        虎合牛 都卢雍<br>
+        <br>
+        sà pó yàochā jiē là chà suō<br>
+        萨婆药叉.喝啰剎娑<br>
+        <br>
+        jiē là hē ruòshé<br>
+        揭啰诃若阇<br>
+        <br>
+        píténgbēng sà nà jié là<br>
+        毗腾崩.萨那羯啰<br>
+        <br>
+        hǔ xìn dū lú yōng<br>
+        虎合牛 都卢雍<br>
+        <br>
+        zhě dū là shī dǐ nán<br>
+        者都啰.尸底南<br>
+        <br>
+        jiē là hē suō hē sà là nán<br>
+        揭啰诃.娑诃萨啰南<br>
+        <br>
+        píténg bēng sà nà là<br>
+        毗腾崩.萨那啰<br>
+        <br>
+        hǔ xìn dū lú yōng<br>
+        虎合牛 都卢雍<br>
+        <br>
+        là chā<br>
+        啰叉<br>
+        <br>
+        pó qié fàn<br>
+        婆伽梵<br>
+        <br>
+        sà dán tuō qié dū sěi níshàn<br>
+        萨怛他.伽都瑟尼钐<br>
+        <br>
+        bō làdiǎn shé jí lì<br>
+        波啰点阇吉唎<br>
+        <br>
+        mó hē suō hē sà là<br>
+        摩诃娑诃萨啰<br>
+        <br>
+        bó shù suō hē sà là<br>
+        勃树娑诃萨啰<br>
+        <br>
+        shì lì shā<br>
+        室唎沙<br>
+        <br>
+        jù zhī suō hē sà ní dì lì<br>
+        俱知娑诃萨泥帝口隶<br>
+        <br>
+        e bì tí shì pó lì duō<br>
+        阿弊提视婆唎多<br>
+        <br>
+        zhàzhà yīngjiā<br>
+        咤咤罂迦<br>
+        <br>
+        mó hē bá shé lú tuó là<br>
+        摩诃跋阇.嚧陀啰<br>
+        <br>
+        dì lì pú pó nà<br>
+        帝唎菩婆那<br>
+        <br>
+        màn chá là<br>
+        曼茶啰<br>
+        <br>
+        wū xìn<br>
+        乌合牛<br>
+        <br>
+        suō xì dì bó pó dū<br>
+        娑悉帝薄婆都<br>
+        <br>
+        mó mó<br>
+        么么<br>
+        <br>
+        yìn tù nà mó mó xiě<br>
+        印兔那么么写<br>
+      </p>
+    </div>
+
+    <!-- Card 4: 第三會 -->
+    <div class="ms-card s4 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第三會</span>
+        <span class="ms-title">觀音合同會</span>
+        <span class="ms-tag">第 181–282 行</span>
+      </div>
+      <p class="ms-text compact">
+        là shé pó yè zhǔ là bá yè<br>
+        啰阇婆夜 主啰跋夜<br>
+        <br>
+        e qí ní pó yè<br>
+        阿祇尼婆夜<br>
+        <br>
+        wū tuó jiā pó yè<br>
+        乌陀迦婆夜<br>
+        <br>
+        pí shā pó yè<br>
+        毗沙婆夜<br>
+        <br>
+        shě sàduō là pó yè<br>
+        舍萨多啰婆夜<br>
+        <br>
+        pó là zhuójié là pó yè<br>
+        婆啰斫羯啰婆夜<br>
+        <br>
+        tù sěi chā pó yè<br>
+        突瑟叉婆夜<br>
+        <br>
+        e shě nǐ pó yè<br>
+        阿舍你婆夜<br>
+        <br>
+        e jiā là mì lì zhū pó yè<br>
+        阿迦啰.密唎柱婆夜<br>
+        <br>
+        tuó là ní bù míjiàn bōqié bōtuó pó yè<br>
+        陀啰尼部弥剑.波伽波陀婆夜<br>
+        <br>
+        wū là jiā pó duō pó yè<br>
+        乌啰迦婆多婆夜<br>
+        <br>
+        làshé tánchá pó yè<br>
+        剌阇坛茶婆夜<br>
+        <br>
+        nuó qié pó yè<br>
+        那伽婆夜<br>
+        <br>
+        pítiáo dàn pó yè<br>
+        毗条怛婆夜<br>
+        <br>
+        sū bō là ná pó yè<br>
+        苏波啰拏婆夜<br>
+        <br>
+        yàochā jiē là hē<br>
+        药叉揭啰诃<br>
+        <br>
+        là chā sī jiē là hē<br>
+        啰叉私.揭啰诃<br>
+        <br>
+        bì lì duō jiē là hē<br>
+        毕唎多.揭啰诃<br>
+        <br>
+        pí shě zhē jiē là hē<br>
+        毘舍遮.揭啰诃<br>
+        <br>
+        bùduō jiē là hē<br>
+        部多揭啰诃<br>
+        <br>
+        jiū pánchá jiē là hē<br>
+        鸠盘茶.揭啰诃<br>
+        <br>
+        bǔ dān nà jiē là hē<br>
+        补单那.揭啰诃<br>
+        <br>
+        jiāzhà bǔ dān nà jiē là hē<br>
+        迦咤补单那.揭啰诃<br>
+        <br>
+        xīqián dù jiē là hè<br>
+        悉干度.揭啰诃<br>
+        <br>
+        e bō xī mó là jiē là hè<br>
+        阿播悉摩啰.揭啰诃<br>
+        <br>
+        wū tán mó tuó jiē là hē<br>
+        乌檀摩陀.揭啰诃<br>
+        <br>
+        chēyè jiē là hē<br>
+        车夜揭啰诃<br>
+        <br>
+        xī lì pó dì jiē là hē<br>
+        醯唎婆帝.揭啰诃<br>
+        <br>
+        shèduō hē lì nán<br>
+        社多诃唎南<br>
+        <br>
+        jiē pó hē lì nán<br>
+        揭婆诃唎南<br>
+        <br>
+        lú dì là hē lì nán<br>
+        嚧地啰.诃唎南<br>
+        <br>
+        mángsuō hē lì nán<br>
+        忙娑诃唎南<br>
+        <br>
+        mítuó hē lì nán<br>
+        谜陀诃唎南<br>
+        <br>
+        mó shé hē lì nán<br>
+        摩阇诃唎南<br>
+        <br>
+        shéduō hē lì nǚ<br>
+        阇多诃唎女<br>
+        <br>
+        shì bǐduō hē lì nán<br>
+        视比多诃唎南<br>
+        <br>
+        pí duō hē lì nán<br>
+        毗多诃唎南<br>
+        <br>
+        pó duō hē lì nán<br>
+        婆多诃唎南<br>
+        <br>
+        e shū zhē hē lì nǚ<br>
+        阿输遮.诃唎女<br>
+        <br>
+        zhìduō hē lì nǚ<br>
+        质多诃唎女<br>
+        <br>
+        dìshàn sà píshàn<br>
+        帝钐萨鞞钐<br>
+        <br>
+        sà pó jiē là hē nán<br>
+        萨婆揭啰诃南<br>
+        <br>
+        pí tuó yē shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        bō lì bá là zhějiā qì lì dān<br>
+        波唎跋啰者迦.讫唎担<br>
+        <br>
+        pí tuó yē shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        chá yǎn ní qì lì dān<br>
+        茶演尼.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        mó hē bōshū bō dàn yè lú tuó là qì lì dān<br>
+        摩诃般输般怛夜 嚧陀啰.讫唎担<br>
+        <br>
+        pí tuó yē shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        nuó lā yè ná qì lì dān<br>
+        那啰夜拏.讫唎担<br>
+        <br>
+        pí tuó yē shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        dànduǒqié lú chá xī qì lì dàn<br>
+        怛埵伽嚧茶西.讫唎担<br>
+        <br>
+        pí tuó yē shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        mó hē jiā là mó dàn lì qié ná qì li dàn<br>
+        摩诃迦啰.摩怛唎伽拏.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        jiā bō lì jiā qì lì dàn<br>
+        迦波唎迦.讫唎担<br>
+        <br>
+        pí tuó yē shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        shé yè jié là mó dù jié là<br>
+        阇夜羯啰.摩度羯啰<br>
+        <br>
+        sà pó là tuō suō dá nà qì lì dàn<br>
+        萨婆啰他娑达那.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        zhě duō là pó qí nǐ qì lì dàn<br>
+        赭咄啰.婆耆你.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        pí lì yáng qì lì zhī<br>
+        毗唎羊.讫唎知<br>
+        <br>
+        nàntuó jī shā là qié ná bō dì<br>
+        难陀鸡沙啰.伽拏般帝<br>
+        <br>
+        suǒ xī yè qì lì dàn<br>
+        索醯夜.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        nà jiē nà shě là pó ná qì li dàn<br>
+        那揭那.舍啰婆拏.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        a luó hàn qì lì dàn<br>
+        阿罗汉.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        pí duō là qié qì lì dàn<br>
+        毗多啰伽.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        bá shé là bō nǐ jù xī yè jù xī yè<br>
+        跋阇啰波你 具醯夜.具醯夜<br>
+        <br>
+        jiā dì bō dì qì lì dàn<br>
+        迦地般帝.讫唎担<br>
+        <br>
+        pí tuó yè shé chēntuó yè mí jī là yè mí<br>
+        毗陀夜阇.嗔陀夜弥 鸡啰夜弥<br>
+        <br>
+        là chā wǎng<br>
+        啰叉罔<br>
+        <br>
+        pó qié fàn<br>
+        婆伽梵<br>
+        <br>
+        yìn tù nà mó mó xiě<br>
+        印兔那.么么写<br>
+      </p>
+    </div>
+
+    <!-- Card 5: 第四會 -->
+    <div class="ms-card s5 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第四會</span>
+        <span class="ms-title">剛藏折攝會</span>
+        <span class="ms-tag">第 283–340 行</span>
+      </div>
+      <p class="ms-text compact">
+        pó qié fàn sà dànduō bō dá là<br>
+        婆伽梵 萨怛多.般怛啰<br>
+        <br>
+        nā mō cuì dū dì<br>
+        南无粹都帝<br>
+        <br>
+        e xī duō nà là là jiā<br>
+        阿悉多.那啰剌迦<br>
+        <br>
+        bō là pó xī pǔ zhà<br>
+        波啰婆.悉普咤<br>
+        <br>
+        pí jiā sà dànduō bō dì lì<br>
+        毗迦萨怛多.钵帝唎<br>
+        <br>
+        shí fó là shí fó là<br>
+        什佛啰.什佛啰<br>
+        <br>
+        tuó là tuó là<br>
+        陀啰陀啰<br>
+        <br>
+        pín tuólà pín tuólà<br>
+        频陀啰.频陀啰<br>
+        <br>
+        chēntuóchēntuó<br>
+        嗔陀嗔陀<br>
+        <br>
+        hǔ xìn hǔ xìn<br>
+        虎合牛 虎合牛<br>
+        <br>
+        pàn zhà<br>
+        泮咤<br>
+        <br>
+        pànzhàpànzhà pànzhàpànzhà<br>
+        泮咤泮咤泮咤泮咤<br>
+        <br>
+        suō hē<br>
+        娑诃<br>
+        <br>
+        xī xī pàn<br>
+        醯醯泮<br>
+        <br>
+        e móu jiā yē pàn<br>
+        阿牟迦耶泮<br>
+        <br>
+        e bō là tí hē duō pàn<br>
+        阿波啰提诃多泮<br>
+        <br>
+        pó là bō là tuó pàn<br>
+        婆啰波啰陀泮<br>
+        <br>
+        e sù là pí tuó là bō jiā pàn<br>
+        阿素啰.毗陀啰.波迦泮<br>
+        <br>
+        sà pó tí pí bì pàn<br>
+        萨婆提鞞弊泮<br>
+        <br>
+        sà pó nà qié bì pàn<br>
+        萨婆那伽弊泮<br>
+        <br>
+        sà pó yàochā bì pàn<br>
+        萨婆药叉弊泮<br>
+        <br>
+        sà pó qián tà pó bì pàn<br>
+        萨婆干闼婆弊泮<br>
+        <br>
+        sà pó bǔ dān nà bì pàn<br>
+        萨婆补丹那弊泮<br>
+        <br>
+        jiāzhà bǔdān nà bì pàn<br>
+        迦咤补丹那弊泮<br>
+        <br>
+        sà pó tùláng zhīdì bì pàn<br>
+        萨婆突狼枳帝弊泮<br>
+        <br>
+        sà pó tù sè bǐ lí qì sěi dì bì pàn<br>
+        萨婆突涩比口犁.讫瑟帝弊泮<br>
+        <br>
+        sà pó shí pó lì bì pàn<br>
+        萨婆什婆唎弊泮<br>
+        <br>
+        sà pó e bō xī mó lí bì pàn<br>
+        萨婆阿播悉么口犁弊泮<br>
+        <br>
+        sà pó shě là pó ná bì pàn<br>
+        萨婆舍啰婆拏弊泮<br>
+        <br>
+        sà pó dì dì jī bì pàn<br>
+        萨婆地帝鸡弊泮<br>
+        <br>
+        sà pó dàn mó tuójì bì pàn<br>
+        萨婆怛摩陀继弊泮<br>
+        <br>
+        sà pó pí tuó yē là shì zhē lí bì pàn<br>
+        萨婆毗陀耶.啰誓遮口犁弊泮<br>
+        <br>
+        shé yè jié là mó dù jié là<br>
+        阇夜羯啰.摩度羯啰<br>
+        <br>
+        sà pó làtuō suōtuó jī bì pàn<br>
+        萨婆啰他娑陀鸡弊泮<br>
+        <br>
+        pí dì yè zhē lì bìpàn<br>
+        毗地夜.遮唎弊泮<br>
+        <br>
+        zhě dū là fù qí nǐ bì pàn<br>
+        者都啰.缚耆你弊泮<br>
+        <br>
+        bá shé là jù mó lì<br>
+        跋阇啰.俱摩唎<br>
+        <br>
+        pí tuó yè là shì bì pàn<br>
+        毗陀夜.啰誓弊泮<br>
+        <br>
+        mó hē bōlà dīngyáng yì qí lì bì pàn<br>
+        摩诃波啰丁羊.乂 耆唎弊泮<br>
+        <br>
+        bá shé là shāngjiélàyè<br>
+        跋阇啰.商羯啰夜<br>
+        <br>
+        bō là zhàng qí là shé yē pàn<br>
+        波啰丈耆.啰阇耶泮<br>
+        <br>
+        mó hē jiā là yè<br>
+        摩诃迦啰夜<br>
+        <br>
+        mó hē mò dàn lì jiā ná<br>
+        摩诃末怛唎迦拏<br>
+        <br>
+        nā mō suōjié lìduō yèpàn<br>
+        南无娑羯唎多夜泮<br>
+        <br>
+        bìsěi ná bì yè pàn<br>
+        毖瑟拏婢曳泮<br>
+        <br>
+        bó là hē móu ní yè pàn<br>
+        勃啰诃牟尼曳泮<br>
+        <br>
+        e qí ní yè pàn<br>
+        阿耆尼曳泮<br>
+        <br>
+        mó hē jié lì yèpàn<br>
+        摩诃羯唎曳泮<br>
+        <br>
+        jié là tánchí yèpàn<br>
+        羯啰檀迟曳泮<br>
+        <br>
+        miè dànlì yè pàn<br>
+        蔑怛唎曳泮<br>
+        <br>
+        lào dànlì yèpàn<br>
+        唠怛唎曳泮<br>
+        <br>
+        zhē wénchá yèpàn<br>
+        遮文茶曳泮<br>
+        <br>
+        jié luólà dànlì yè pàn<br>
+        羯逻啰怛唎曳泮<br>
+        <br>
+        jiā bō lì yè pàn<br>
+        迦般唎曳泮<br>
+        <br>
+        e dì mù zhì duō<br>
+        阿地目质多<br>
+        <br>
+        jiāshī móshě nuó<br>
+        迦尸摩舍那<br>
+        <br>
+        pó sī nǐ yè pàn<br>
+        婆私你曳泮<br>
+        <br>
+        yǎn jí zhì<br>
+        演吉质<br>
+        <br>
+        sà duǒ póxiě<br>
+        萨埵婆写<br>
+        <br>
+        mó mó yìn tù nà mó mó xiě<br>
+        么么印兔那.么么写<br>
+      </p>
+    </div>
+
+    <!-- Card 6: 第五會 -->
+    <div class="ms-card s6 reveal">
+      <div class="ms-header">
+        <span class="ms-num">第五會</span>
+        <span class="ms-title">文殊弘傳會</span>
+        <span class="ms-tag">第 341–428 行</span>
+      </div>
+      <p class="ms-text compact">
+        tù sěizhà zhìduō<br>
+        突瑟咤质多<br>
+        <br>
+        e mò dàn lì zhìduō<br>
+        阿末怛唎质多<br>
+        <br>
+        wū shé hē là<br>
+        乌阇诃啰<br>
+        <br>
+        qié pó hē là<br>
+        伽婆诃啰<br>
+        <br>
+        lú dì là hē là<br>
+        嚧地啰诃啰<br>
+        <br>
+        pó suō hē là<br>
+        婆娑诃啰<br>
+        <br>
+        mó shé hē là<br>
+        摩阇诃啰<br>
+        <br>
+        shé duō hē là<br>
+        阇多诃啰<br>
+        <br>
+        shì bì duō hē là<br>
+        视毖多诃啰<br>
+        <br>
+        bá lüè yè hē là<br>
+        跋略夜诃啰<br>
+        <br>
+        qiántuó hē là<br>
+        干陀诃啰<br>
+        <br>
+        bù shǐ bō hē là<br>
+        布史波诃啰<br>
+        <br>
+        pō là hē là<br>
+        颇啰诃啰<br>
+        <br>
+        pó xiě hē là<br>
+        婆写诃啰<br>
+        <br>
+        bō bō zhìduō<br>
+        般波质多<br>
+        <br>
+        tù sěi zhà zhìduō<br>
+        突瑟咤质多<br>
+        <br>
+        làotuó là zhìduō<br>
+        唠陀啰质多<br>
+        <br>
+        yàochā jiēlà hē<br>
+        药叉揭啰诃<br>
+        <br>
+        là chà suō jiē là hē<br>
+        啰剎娑.揭啰诃<br>
+        <br>
+        bì lì duō jiē là hē<br>
+        闭口隶多.揭啰诃<br>
+        <br>
+        pí shě zhē jiē là hē<br>
+        毗舍遮.揭啰诃<br>
+        <br>
+        bù duō jiē là hē<br>
+        部多揭啰诃<br>
+        <br>
+        jiū pánchá jiē là hē<br>
+        鸠盘茶.揭啰诃<br>
+        <br>
+        xī qiántuó jiē là hē<br>
+        悉干陀.揭啰诃<br>
+        <br>
+        wū dàn mó tuó jiē là hē<br>
+        乌怛摩陀.揭啰诃<br>
+        <br>
+        chē yè jiē là hē<br>
+        车夜揭啰诃<br>
+        <br>
+        e bō sà mó là jiē là hē<br>
+        阿播萨摩啰.揭啰诃<br>
+        <br>
+        zhái qū gé chá qí ní jiē là hē<br>
+        宅袪革.茶耆尼.揭啰诃<br>
+        <br>
+        lì fó dì jiē là hē<br>
+        唎佛帝.揭啰诃<br>
+        <br>
+        shé mí jiā jiē là hē<br>
+        阇弥迦.揭啰诃<br>
+        <br>
+        shě jù ní jiē là hē<br>
+        舍俱尼.揭啰诃<br>
+        <br>
+        lǎotuó là nándì jiā jiē là hē<br>
+        姥陀啰难地迦.揭啰诃<br>
+        <br>
+        e lán pó jiē là hē<br>
+        阿蓝婆.揭啰诃<br>
+        <br>
+        qián dù bō ní jiē là hē<br>
+        干度波尼.揭啰诃<br>
+        <br>
+        shí fá là<br>
+        什伐啰<br>
+        <br>
+        yīnjiā xījiā<br>
+        堙迦醯迦<br>
+        <br>
+        zhuìdì yàojiā<br>
+        坠帝药迦<br>
+        <br>
+        dá lì dì yàojiā<br>
+        怛隶帝药迦<br>
+        <br>
+        zhě tù tuō jiā<br>
+        者突托迦<br>
+        <br>
+        ní tí shí fá là<br>
+        尼提.什伐啰<br>
+        <br>
+        bì shānmó shí fá là<br>
+        毖钐摩.什伐啰<br>
+        <br>
+        bó dǐ jiā<br>
+        薄底迦<br>
+        <br>
+        bí dǐ jiā<br>
+        鼻底迦<br>
+        <br>
+        shì lì sěi mì jiā<br>
+        室口隶瑟密迦<br>
+        <br>
+        suō nǐ bō dì jiā<br>
+        娑你般帝迦<br>
+        <br>
+        sà pó shí fá là<br>
+        萨婆什伐啰<br>
+        <br>
+        shì lú jí dì<br>
+        室嚧吉帝<br>
+        <br>
+        mò tuó pí dá lúzhìjiàn<br>
+        末陀鞞达嚧制剑<br>
+        <br>
+        e qǐ lú qián<br>
+        阿绮嚧钳<br>
+        <br>
+        mu qié lúqián<br>
+        目佉嚧钳<br>
+        <br>
+        jié lì tù lú qián<br>
+        羯唎突嚧钳<br>
+        <br>
+        jiē là hē jiē lán<br>
+        揭啰诃.揭蓝<br>
+        <br>
+        jié ná shūlán<br>
+        羯拏输蓝<br>
+        <br>
+        dànduō shūlán<br>
+        惮多输蓝<br>
+        <br>
+        qì lì yè shū lán<br>
+        迄唎夜输蓝<br>
+        <br>
+        mò mò shū lán<br>
+        末么输蓝<br>
+        <br>
+        bá lì shìpó shū lán<br>
+        跋唎室婆输蓝<br>
+        <br>
+        bì lì sěizhà shūlán<br>
+        毖栗瑟咤输蓝<br>
+        <br>
+        wūtuó là shūlán<br>
+        乌陀啰输蓝<br>
+        <br>
+        jiézhī shūlán<br>
+        羯知输蓝<br>
+        <br>
+        bá xī dì shūlán<br>
+        跋悉帝输蓝<br>
+        <br>
+        wū lú shūlán<br>
+        邬嚧输蓝<br>
+        <br>
+        chángqiéshūlán<br>
+        常伽输蓝<br>
+        <br>
+        hè xī duō shūlán<br>
+        喝悉多输蓝<br>
+        <br>
+        bá tuó shūlán<br>
+        跋陀输蓝<br>
+        <br>
+        suōfángyàngqié bōlà zhàngqiéshūlán<br>
+        娑房盎伽.般啰丈伽输蓝<br>
+        <br>
+        bù duō bìduōchá<br>
+        部多毖哆茶<br>
+        <br>
+        chá qí ní<br>
+        茶耆尼<br>
+        <br>
+        shí pó là<br>
+        什婆啰<br>
+        <br>
+        tuó tù lú jiā<br>
+        陀突嚧迦<br>
+        <br>
+        jiànduō lú jízhī<br>
+        建咄嚧吉知<br>
+        <br>
+        pó lù duō pí<br>
+        婆路多毗<br>
+        <br>
+        sà bō là hē ling qié<br>
+        萨般嚧诃凌伽<br>
+        <br>
+        shūshā dàn là<br>
+        输沙怛啰<br>
+        <br>
+        suō nà jié là<br>
+        娑那羯啰<br>
+        <br>
+        pí shā yù jiā<br>
+        毗沙喻迦<br>
+        <br>
+        e qí ní wū tuó jiā<br>
+        阿耆尼.乌陀迦<br>
+        <br>
+        mò là pí là jiànduòlà<br>
+        末啰鞞啰建跢啰<br>
+        <br>
+        e jiā là mì lì duō dànliǎn bù jiā<br>
+        阿迦啰密唎咄.怛敛部迦<br>
+        <br>
+        dì lì là zhà<br>
+        地栗剌咤<br>
+        <br>
+        bì lì sěi zhìjiā<br>
+        毖唎瑟质迦<br>
+        <br>
+        sà pó nà jù là<br>
+        萨婆那俱啰<br>
+        <br>
+        sì yǐn qié bì jiē là lì yàochā dàn là chú<br>
+        肆引伽弊.揭啰唎药叉.怛啰刍<br>
+        <br>
+        mò là shì fèidìshàn suō pí shàn<br>
+        末啰视.吠帝钐.娑鞞钐<br>
+        <br>
+        xī dàn duō bō dá là<br>
+        悉怛多.钵怛啰<br>
+        <br>
+        mó hē bá shé là sěiníshān<br>
+        摩诃跋阇嚧瑟尼钐<br>
+        <br>
+        mó hē bō lài zhàngqílán<br>
+        摩诃般赖丈耆蓝<br>
+        <br>
+        yè bō tù tuó shěyù shé nuó<br>
+        夜波突陀.舍喻阇那<br>
+        <br>
+        biàn dá lì nú<br>
+        辫怛口隶拏<br>
+        <br>
+        pí tuó yē pántán jiā lú mí<br>
+        毗陀耶.盘昙迦嚧弥<br>
+        <br>
+        dì shú pántán jiā lú mí<br>
+        帝殊.盘昙迦嚧弥<br>
+        <br>
+        bō là pítuó pántán jiā lú mí<br>
+        般啰毘陀.盘昙迦嚧弥<br>
+        <br>
+        duō zhí tuō<br>
+        哆侄他<br>
+        <br>
+        ān<br>
+        唵<br>
+        <br>
+        ā nà lì<br>
+        阿那口隶<br>
+        <br>
+        pí shě tí<br>
+        毘舍提<br>
+        <br>
+        pí là bá shé làtuó lì<br>
+        鞞啰跋阇啰陀唎<br>
+        <br>
+        pántuó pántuó nǐ<br>
+        盘陀盘陀你<br>
+        <br>
+        bá shé là bàng ní pàn<br>
+        跋阇啰.谤尼泮<br>
+        <br>
+        hǔ xìn dū lú yōng pàn<br>
+        虎合牛 都嚧瓮泮<br>
+        <br>
+        suō pó hē<br>
+        莎婆诃<br>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3: FOUR PHASE TRAINING PLAN
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">第三步 · 開始訓練</p>
+  <h2 class="section-title">四階段訓練計畫</h2>
+  <p class="section-sub">廿一天分散練習，每天不超過一小時。分散勝於集中，睡眠是記憶的盟友。</p>
+
+  <div class="cards-grid">
+
+    <article class="card p1 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第一階段</p>
+        <span class="day-badge">Day 1–5</span>
+      </div>
+      <h2>建立聽覺記憶</h2>
+      <a href="https://youtu.be/Sdy02LeEENo" target="_blank" rel="noopener" class="yt-link">
+        <span class="yt-icon" aria-hidden="true"></span>
+        <span class="yt-info">
+          <span class="yt-title">楞嚴咒梵音標準唱誦</span>
+          <span class="yt-desc">YouTube · 點擊在新分頁中播放</span>
+        </span>
+        <span class="yt-arrow" aria-hidden="true">↗</span>
+      </a>
+      <ul>
+        <li>Day 1–2：跟讀<strong>咒前 + 第一會</strong>（第 1–150 行），感受三歸依與毘盧真法會的禮敬節奏，跟讀 5 遍</li>
+        <li>Day 3：攻克<strong>第二會 + 第三會</strong>（第 151–282 行），抓住「虎合牛 都盧雍」的韻律循環和「訖唎擔」的段落標記</li>
+        <li>Day 4：攻克<strong>第四會 + 第五會</strong>（第 283–428 行），感受「泮咤」雷音陣和「盤曇迦嚧彌」結界守護</li>
+        <li>Day 5：<strong>全文串聽</strong>，不看文本完整跟讀 2 遍，感受從咒前到第五會的整體流動</li>
+        <li>每天睡前播放當天區段錄音 15 分鐘，利用睡眠記憶鞏固機制</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">每日時間分配</p>
+        <div class="daily-slots">
+          <span class="time-slot">Day 1–2 咒前+第一會跟讀+指讀 約40min</span>
+          <span class="time-slot">Day 3 第二+三會 約35min</span>
+          <span class="time-slot">Day 4 第四+五會 約35min</span>
+          <span class="time-slot">Day 5 全文串聽+睡前音頻 約45min</span>
+        </div>
+      </div>
+      <p class="card-note">利用中文漢字的視覺記憶輔助梵音發音，雙通道編碼加倍記憶效果</p>
+    </article>
+
+    <article class="card p2 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第二階段</p>
+        <span class="day-badge">Day 6–10</span>
+      </div>
+      <h2>結構化拆解</h2>
+      <ul>
+        <li><strong>Day 6 — 咒前：</strong>阿難讚佛偈 + 三歸依 + 經文序言，以偈頌韻律輔助記憶，明白咒語的背景與緣起</li>
+        <li><strong>Day 7 — 第一會：</strong>以 6 次「南无婆伽婆帝…跢他伽多耶」歸敬句型分組，逐組攻克五部如來與護法菩薩名號</li>
+        <li><strong>Day 8 — 第二會：</strong>抓住「虎合牛 都盧雍」的重複節奏（共 7 次），用身體律動配合真言節奏</li>
+        <li><strong>Day 9 — 第三會：</strong>20+ 次「訖唎擔」如念珠計數，17 組「毗陀夜闍…雞囉夜彌」三段式層層推進，邊撥念珠邊背誦</li>
+        <li><strong>Day 10 — 第四會 + 第五會：</strong>「泮咤」雷音陣按目標分組（天龍八部→鬼神→咒師），「盤曇迦嚧彌」三重結界，最後歸於根本咒「唵 阿那隸…莎婆訶」</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">每日時間分配</p>
+        <div class="daily-slots">
+          <span class="time-slot">每天攻克一段 約40–50min</span>
+          <span class="time-slot">早晚各一次串聯複習 約15min</span>
+        </div>
+      </div>
+      <p class="card-note">五會各有明確的結構標記（訖唎擔、泮咤、盤曇迦嚧彌），利用這些咒語路標導航</p>
+    </article>
+
+    <article class="card p3 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第三階段</p>
+        <span class="day-badge">Day 11–15</span>
+      </div>
+      <h2>鞏固與內化</h2>
+      <ul>
+        <li><strong>Day 11–12 — 費曼輸出法：</strong>假裝你要教別人楞嚴咒注音，大聲說出每會的功能、記憶標記和關鍵字詞（如訖唎擔、泮咤、盤曇迦嚧彌），教就是最好的學</li>
+        <li><strong>Day 13 — 手寫抄寫：</strong>分兩天各抄約 215 行，pinyin 與漢字對照抄寫，手寫激活運動記憶腦區，雙通道編碼加倍記憶效果</li>
+        <li><strong>Day 14 — 干擾抗練：</strong>邊走路邊背誦，測試身體分心時記憶是否穩固；請人隨機說關鍵詞（如訖唎擔 / 泮咤 / 虎合牛），從該處往後接</li>
+        <li><strong>Day 15 — 加速挑戰：</strong>以 1.2 倍速連貫背誦全文，標記所有卡頓處，只練那些弱點段落各 10 遍</li>
+        <li>排隊、等車、洗澡……抓住所有碎片時間各背一次</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">每日時間分配</p>
+        <div class="daily-slots">
+          <span class="time-slot">Day 11–12 費曼輸出+碎片背誦 約30min</span>
+          <span class="time-slot">Day 13 手寫抄寫 約50min</span>
+          <span class="time-slot">Day 14 干擾抗練+隨機接龍 約30min</span>
+          <span class="time-slot">Day 15 加速挑戰+弱點修復 約30min</span>
+        </div>
+      </div>
+      <p class="card-note">卡住處不要從頭來，只練那一小段 10 遍，精準打擊弱點</p>
+    </article>
+
+    <article class="card p4 reveal">
+      <div class="card-header">
+        <p class="card-phase-label">第四階段</p>
+        <span class="day-badge">Day 16–21</span>
+      </div>
+      <h2>終極驗收</h2>
+      <ul>
+        <li><strong>Day 16–17：</strong>分段錄音對照文本，逐段檢查準確度，標記所有錯誤處</li>
+        <li><strong>Day 18：</strong>首次全文完整背誦錄音，對照文本逐字檢查</li>
+        <li><strong>Day 19：</strong>集中修復薄弱段落，針對錯誤處重複練習至無誤</li>
+        <li><strong>Day 20：</strong>第二次全文錄音，目標：✅ 20 分鐘內完成 ✅ 錯誤不超過 5 處</li>
+        <li><strong>Day 21：</strong>24 小時冷卻後最終檢驗，無新增錯誤即為過關</li>
+        <li>✅ 驗收完成後保持每週溫習 1–2 次，間隔遞增（3天→7天→14天→30天）</li>
+      </ul>
+      <div class="daily-schedule">
+        <p class="daily-schedule-title">驗收方式</p>
+        <div class="daily-slots">
+          <span class="time-slot">分段錄音對照</span>
+          <span class="time-slot">全文錄音逐字檢查</span>
+          <span class="time-slot">24h 冷卻最終檢驗</span>
+        </div>
+      </div>
+      <p class="card-note">驗收不是終點，是長期記憶的起點。每週溫習，讓楞嚴五會梵音永不褪色</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 4: MEMORY TECHNIQUES
+     ═══════════════════════════════════════════ -->
+<section class="techniques">
+  <p class="section-label">工具箱</p>
+  <h2 class="section-title">核心記憶技巧</h2>
+  <p class="section-sub">七種方法，多重感官，讓楞嚴注音自然銘刻</p>
+  <div class="tech-grid">
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">📿</span>
+      <h3>「訖唎擔」念珠標記</h3>
+      <p>第三會重複 20+ 次，每次一個降伏對象</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🗂️</span>
+      <h3>六段空間分段</h3>
+      <p>將全文拆為咒前+五會，化整為零</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">⚡</span>
+      <h3>「泮咤」雷音記憶</h3>
+      <p>第四會雷音連發，用爆發力輔助記憶</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🔄</span>
+      <h3>「虎合牛」韻律循環</h3>
+      <p>第二會反覆出現，形成強烈節奏感</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🏯</span>
+      <h3>三句式模塊</h3>
+      <p>第三會結尾的「毗陀夜闍…雞囉夜彌」三段式層層推進</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🔤</span>
+      <h3>漢梵雙通道</h3>
+      <p>漢字+pinyin 雙重編碼，視覺與語音相互輔助</p>
+    </div>
+    <div class="tech-card reveal">
+      <span class="tech-icon" aria-hidden="true">🌙</span>
+      <h3>睡眠固化</h3>
+      <p>睡前聽標準唱誦錄音，21 天充分利用睡眠記憶鞏固</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 5: IMPORTANT NOTES
+     ═══════════════════════════════════════════ -->
+<section>
+  <p class="section-label">心法</p>
+  <h2 class="section-title">注意事項</h2>
+  <p class="section-sub">技巧是工具，心態是地基。楞嚴咒全文 428 行、五會結構，這四條原則決定你能走多遠。</p>
+
+  <div class="notes-grid reveal">
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">01</span>
+      <div>
+        <h4>不要死記硬背</h4>
+        <p>這是有韻律的護身咒語，不是考試條文。感受每一會的功能和力量——咒前的莊嚴、第一會的禮敬、第二會的啟動、第三會的降伏、第四會的爆發、第五會的歸結——讓旋律帶著文字自然流淌。漢字與 pinyin 雙通道編碼，讓視覺與聽覺互相輔助。</p>
+      </div>
+    </div>
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">02</span>
+      <div>
+        <h4>每天不超過 1 小時</h4>
+        <p>428 行的篇幅容易讓人想「惡補」，但過量練習導致邊際效益遞減。分散到每天 30–50 分鐘，21 天的累積效果遠勝短時間衝刺。五會結構讓你可以一天一會，節奏可控。</p>
+      </div>
+    </div>
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">03</span>
+      <div>
+        <h4>卡住不求全</h4>
+        <p>某處反覆卡住時，不要每次都從頭開始。只練那一小段 10 遍，精準打擊弱點，直到它和上下文自然銜接。楞嚴咒的「訖唎擔」、「泮咤」、「虎合牛 都盧雍」是天然的記憶救生索——卡住時它們就是你的咒語路標。</p>
+      </div>
+    </div>
+    <div class="note-card">
+      <span class="note-num" aria-hidden="true">04</span>
+      <div>
+        <h4>保持恭敬心</h4>
+        <p>心態放鬆但莊重。緊張和焦慮是記憶的最大敵人。楞嚴咒本身就是護身咒——以被守護的安心感去背誦，而非被篇幅壓垮的恐懼。pinyin 注音讓你不再畏懼梵文難讀，雙通道編碼減輕認知負擔。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer>
+  <p>每日不超過 1 小時 · 保持恭敬放鬆之心 · 分散勝於集中 · 廿一日自然成誦</p>
+  <p class="closing-mantra">唵 阿那隸 毘舍提 鞞囉跋闍囉陀唎 盤陀盤陀你 跋闍囉謗尼泮 虎合牛 都嚧甕泮 莎婆訶</p>
+</footer>
+
+</main>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+/* ── Theme toggle ── */
+(function(){
+  var btn = document.querySelector('.theme-toggle');
+  var html = document.documentElement;
+
+  btn.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
+</script>
+
+</body>
+</html>
