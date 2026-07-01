@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>梵音咒語記憶訓練</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+(function(){
+  var theme = localStorage.getItem('theme');
+  if (!theme) {
+    theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<style>
+/* =============================================
+   TOKENS
+   ============================================= */
+:root {
+  --ink: #16161f;
+  --ink-light: #1f1f2b;
+  --gold: #c4a35a;
+  --gold-bright: #d4b368;
+  --gold-dim: #8a7340;
+  --gold-pale: #e8d5a3;
+  --parchment: #f7f3eb;
+  --vermillion: #c2453a;
+
+  --tile-dabeizhou: #3d5a4f;
+  --tile-dabeizhou-hover: #4a6d60;
+  --tile-lengyan: #2d3a5c;
+  --tile-lengyan-hover: #384870;
+
+  --text-light: #e8e3da;
+  --text-light-muted: #9a958b;
+  --text-dark: #2d2923;
+
+  --font-mantra: 'Cormorant Garamond','Noto Serif','Times New Roman',serif;
+  --font-display: 'Cormorant Garamond','Songti SC','Noto Serif SC',serif;
+  --font-body: 'Inter','PingFang SC','Noto Sans SC',system-ui,sans-serif;
+
+  --radius: 8px;
+  --tile-size: clamp(160px, 40vw, 260px);
+}
+
+[data-theme="light"] {
+  --ink: #faf6ef;
+  --ink-light: #f0ebe0;
+  --gold: #b3903f;
+  --gold-bright: #c4a35a;
+  --gold-dim: #8a7340;
+  --gold-pale: #8a6d2b;
+  --text-light: #2d2923;
+  --text-light-muted: #5c5750;
+
+  --tile-dabeizhou: #5a8a7a;
+  --tile-dabeizhou-hover: #6a9e8c;
+  --tile-lengyan: #4a5a8a;
+  --tile-lengyan-hover: #5a6c9e;
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:var(--font-body);
+  background:var(--ink);
+  color:var(--text-light);
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:background-color 0.3s ease,color 0.2s ease;
+  padding:2rem 0;
+}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+/* =============================================
+   HEADER
+   ============================================= */
+.site-header{
+  text-align:center;margin-bottom:clamp(2rem,6vh,3.5rem);
+}
+.site-header h1{
+  font-family:var(--font-display);
+  font-size:clamp(1.5rem,4vw,2.2rem);
+  font-weight:600;letter-spacing:0.06em;
+  color:var(--text-light);
+}
+.site-header .sub{
+  font-size:0.82rem;color:var(--text-light-muted);
+  margin-top:0.5rem;letter-spacing:0.08em;
+}
+
+/* =============================================
+   TILE GRID
+   ============================================= */
+.tile-grid{
+  display:flex;gap:clamp(1rem,3vw,1.8rem);
+  flex-wrap:wrap;justify-content:center;
+  padding:0 1rem;
+}
+
+/* =============================================
+   TILE (Metro style)
+   ============================================= */
+.tile{
+  display:flex;flex-direction:column;justify-content:flex-end;
+  width:var(--tile-size);height:var(--tile-size);
+  border-radius:var(--radius);
+  text-decoration:none;
+  position:relative;overflow:hidden;
+  transition:transform 0.2s ease,box-shadow 0.25s ease;
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.tile:hover{
+  transform:translateY(-4px) scale(1.03);
+  box-shadow:0 12px 32px rgba(0,0,0,0.25);
+}
+.tile:active{transform:scale(0.97)}
+
+.tile.dabeizhou{
+  background:linear-gradient(160deg,var(--tile-dabeizhou) 0%,var(--tile-dabeizhou-hover) 100%);
+  border:1px solid rgba(255,255,255,0.08);
+}
+.tile.lengyan{
+  background:linear-gradient(160deg,var(--tile-lengyan) 0%,var(--tile-lengyan-hover) 100%);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* tile icon */
+.tile-icon{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-55%);
+  font-size:clamp(2.5rem,6vw,3.8rem);
+  opacity:0.18;pointer-events:none;
+  line-height:1;
+}
+.tile.dabeizhou .tile-icon{color:var(--gold-pale)}
+.tile.lengyan .tile-icon{color:#a0b4d0}
+
+/* tile body */
+.tile-body{
+  position:relative;z-index:1;
+  padding:clamp(1rem,2.5vw,1.5rem);
+}
+.tile-body .tile-label{
+  font-size:0.62rem;font-weight:600;letter-spacing:0.12em;
+  text-transform:uppercase;
+  opacity:0.65;margin-bottom:0.35rem;
+}
+.tile.dabeizhou .tile-body .tile-label{color:#c8e0d0}
+.tile.lengyan .tile-body .tile-label{color:#c0cce0}
+
+.tile-body h2{
+  font-family:var(--font-display);
+  font-size:clamp(1.15rem,2.5vw,1.5rem);
+  font-weight:600;letter-spacing:0.05em;
+  line-height:1.25;margin-bottom:0.3rem;
+}
+.tile.dabeizhou .tile-body h2{color:#fff}
+.tile.lengyan .tile-body h2{color:#fff}
+
+.tile-body .tile-hint{
+  font-family:var(--font-mantra);font-style:italic;
+  font-size:0.7rem;opacity:0.6;letter-spacing:0.02em;
+  line-height:1.35;
+}
+.tile.dabeizhou .tile-body .tile-hint{color:#c8e0d0}
+.tile.lengyan .tile-body .tile-hint{color:#c0cce0}
+
+/* tile top accent line */
+.tile::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  border-radius:var(--radius) var(--radius) 0 0;
+  z-index:2;
+}
+.tile.dabeizhou::before{background:var(--gold)}
+.tile.lengyan::before{background:var(--vermillion)}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.site-footer{
+  margin-top:clamp(2rem,5vh,3rem);
+  text-align:center;
+}
+.site-footer p{
+  font-size:0.72rem;color:var(--text-light-muted);
+  letter-spacing:0.06em;
+}
+
+/* =============================================
+   THEME TOGGLE
+   ============================================= */
+.theme-toggle{
+  position:fixed;top:1.2rem;right:1.2rem;z-index:1000;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(255,255,255,0.08);
+  background:var(--ink-light);
+  color:var(--text-light);
+  font-size:1.15rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.3s ease,border-color 0.3s ease,box-shadow 0.25s ease,transform 0.2s ease;
+  box-shadow:0 2px 8px rgba(0,0,0,0.12);
+  -webkit-tap-highlight-color:transparent;
+}
+.theme-toggle:hover{
+  border-color:var(--gold);
+  box-shadow:0 0 18px rgba(196,163,90,0.18);
+  transform:scale(1.06);
+}
+.theme-toggle:active{transform:scale(0.94)}
+[data-theme="dark"] .theme-toggle .icon-sun{display:inline}
+[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+[data-theme="light"] .theme-toggle .icon-sun{display:none}
+[data-theme="light"] .theme-toggle .icon-moon{display:inline}
+
+/* =============================================
+   REDUCED MOTION
+   ============================================= */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:0.01ms!important;
+  }
+}
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" aria-label="切換深淺色模式" title="切換深淺色模式">
+  <span class="icon-sun" aria-hidden="true">☀️</span>
+  <span class="icon-moon" aria-hidden="true">🌙</span>
+</button>
+
+<header class="site-header">
+  <h1>梵音咒語記憶訓練</h1>
+  <p class="sub">選擇一部咒語，開始你的背誦之旅</p>
+</header>
+
+<nav class="tile-grid" aria-label="咒語選擇">
+  <a href="memory-plan.html" class="tile dabeizhou">
+    <span class="tile-icon" aria-hidden="true">🪷</span>
+    <div class="tile-body">
+      <p class="tile-label">Great Compassion Mantra</p>
+      <h2>大悲咒</h2>
+      <p class="tile-hint">Namo Ratna Trayaya…<br>七日四階 · 14 行</p>
+    </div>
+  </a>
+
+  <a href="lengyanzhou.html" class="tile lengyan">
+    <span class="tile-icon" aria-hidden="true">⚡</span>
+    <div class="tile-body">
+      <p class="tile-label">Śūraṅgama Mantra</p>
+      <h2>楞嚴咒</h2>
+      <p class="tile-hint">Namaḥ sarva buddha…<br>廿一日四階 · 193 行</p>
+    </div>
+  </a>
+</nav>
+
+<footer class="site-footer">
+  <p>每日不超過 1 小時 · 分散勝於集中 · 梵音自然銘刻</p>
+</footer>
+
+<script>
+/* ── Theme toggle ── */
+(function(){
+  var btn = document.querySelector('.theme-toggle');
+  var html = document.documentElement;
+
+  btn.addEventListener('click', function(){
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+})();
+</script>
+
+</body>
+</html>

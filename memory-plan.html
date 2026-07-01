@@ -606,6 +606,24 @@ footer .closing-mantra{
 /* =============================================
    REDUCED MOTION
    ============================================= */
+/* back link */
+.back-home{
+  position:fixed;top:1.2rem;left:1.2rem;z-index:1000;
+  display:flex;align-items:center;gap:0.35rem;
+  font-family:var(--font-body);
+  font-size:0.78rem;font-weight:500;color:var(--text-light-muted);
+  text-decoration:none;
+  padding:0.4rem 0.8rem;
+  border-radius:100px;
+  border:1px solid var(--border-subtle-strong);
+  background:var(--ink-light);
+  transition:color 0.25s ease,border-color 0.25s ease,background 0.25s ease;
+  letter-spacing:0.03em;
+  -webkit-tap-highlight-color:transparent;
+}
+.back-home:hover{color:var(--gold);border-color:var(--gold)}
+.back-home .back-arrow{font-size:1rem;line-height:1}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{
     animation-duration:0.01ms!important;
@@ -622,6 +640,10 @@ footer .closing-mantra{
   <span class="icon-sun" aria-hidden="true">☀️</span>
   <span class="icon-moon" aria-hidden="true">🌙</span>
 </button>
+
+<a href="index.html" class="back-home" title="返回首頁">
+  <span class="back-arrow" aria-hidden="true">←</span> 首頁
+</a>
 
 <main>
 
